@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida</title>
-    <link rel="stylesheet" href="bienvenida.css" />
-
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/bienvenida.css" />
+    <script defer src="../bienvenida.js"></script>
 </head>
 <body>
-    <main id="pantalla-bienvenida">
-        <h1>¡Bienvenido a la Tienda de Música!</h1>
-        <p>Ingresa tu nombre para continuar: </p>
 
-        <form id="form-nombre">
-            <label for="input-nombre">Nombre:</label>
-            <input type="text" id="input-nombre" name="nombre" required />
-        </form>
-    </main>
-    
+  
+    <section class="pantalla-bienvenida">
+
+       
+        <div class="panel-bienvenida">
+
+            <h1 class="titulo-app">¡Bienvenido a la Tienda de Música!</h1>
+            <p class="subtitulo-app">Ingresa tu nombre para continuar:</p>
+
+            <form id="form-nombre" class="form-nombre">
+                <label for="input-nombre" class="label-nombre">Nombre:</label>
+
+                <input 
+                    type="text" 
+                    id="input-nombre" 
+                    name="nombre" 
+                    class="campo-nombre"
+                    placeholder="Ej: Juan"
+                    required 
+                />
+
+                <button type="submit" class="btn-continuar">Ingresar</button>
+            </form>
+
+        </div>
+    </section>
+
 </body>
 </html>
