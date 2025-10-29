@@ -3,8 +3,8 @@
 
    ========================================================== */
 :root {
-  --color-principal: #2f9e44;     /* Color dominante (header, botones) */
-  --color-principal-hover: #38b349; /* Versión más clara para hover */
+  --color-principal: #010801;     /* Color dominante (header, botones) */
+  --color-principal-hover: #08274b; /* Versión más clara para hover */
   --color-fondo: #f8f9fa;         /* Fondo general */
   --color-texto: #333;            /* Texto principal */
   --color-blanco: #ffffff;        /* Blanco puro */
@@ -197,5 +197,7 @@ footer {
   color: var(--color-principal);
   font-size: 1rem;
 }
+
+
 
 

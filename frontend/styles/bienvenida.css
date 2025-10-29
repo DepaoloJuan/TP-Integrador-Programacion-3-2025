@@ -1,0 +1,23 @@
+@import url('../index.css');
+
+/* ==========================================================
+   PANTALLA DE BIENVENIDA
+   ========================================================== */
+
+
+#pantalla-bienvenida h1{
+  color: var(--color-principal);
+  margin-bottom: 10px;
+}
+
+#form-nombre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+#input-nombre {
+  padding: 8px;
+  border: 1px solid var(--color-borde);
+}
