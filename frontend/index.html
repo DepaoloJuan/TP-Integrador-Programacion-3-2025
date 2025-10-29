@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda - TP Integrador</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+  </head>
+
+  <body>
+   
+    <header>
+      <h1>Tienda de Música</h1>
+      <div id="info-carrito">
+        Carrito (<span id="carrito-cantidad">0</span>)
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>Productos disponibles</h2>
+
+        <!-- Contenedor donde JS va a renderizar los CDs -->
+        <div id="lista-productos">
+        
+        </div>
+      </section>
+
+      <!-- ===========================================
+           SECCIÓN CARRITO
+           Lista de lo que el usuario fue agregando.
+           Por ahora dejamos la estructura vacía.
+           =========================================== -->
+      <aside id="carrito">
+        <h2>Carrito</h2>
+        <ul id="carrito-items">
+          
+        </ul>
+
+        <p>Total: $ <span id="carrito-total">0</span></p>
+        <button id="btn-vaciar">Vaciar carrito</button>
+        <button id="btn-confirmar">Confirmar compra</button>
+      </aside>
+    </main>
+
+    <!-- ===========================================
+         FOOTER
+         =========================================== -->
+    <footer>
+      <small>TP Integrador Programación 3 - 2025</small>
+    </footer>
+
+    
+  </body>
+</html>

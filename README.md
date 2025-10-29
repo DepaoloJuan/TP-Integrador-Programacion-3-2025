@@ -11,17 +11,20 @@
 TP-Integrador-Programacion-3-2025/
 ├─ frontend/ ← Aplicación cliente (autoservicio)
 │ ├─ assets/ ← Imágenes, íconos, logos
-│ ├─ scripts/ ← Archivos JavaScript (lógica del cliente)
+│ ├─ vistas / ← Subpáginas: bienvenida, productos, carrito, ticket
 │ ├─ styles/ ← Archivos CSS
-│ ├─ index.html ← Página principal (entrada al autoservicio)
-│ └─ pages/ (opcional) ← Subpáginas: bienvenida, productos, carrito, ticket
+| ├─.env
+│ └─ index.html ← Página principal (entrada al autoservicio)
+
 │
 ├─ backend/ ← Servidor / API / Vistas admin
-│ ├─ routes/ ← Endpoints API y rutas web
-│ ├─ controllers/ ← Lógica de negocio
-│ ├─ models/ ← Tablas y conexión MySQL
-│ ├─ views/ ← Vistas EJS (login, dashboard)
-│ └─ server.js ← Arranque del servidor Express
+| ├─src
+│ | ├─ routes/ ← Endpoints API y rutas web
+│ | ├─ controllers/ ← Lógica de negocio
+│ | ├─ models/ ← Tablas y conexión MySQL
+│ | ├─ views/ ← Vistas EJS (login, dashboard)
+| ├─utils
+│ └─ index.js ← Arranque del servidor Express
 │
 └─ README.md
 
