@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/ticket.css">
     <script defer src="../ticket.js"></script>
+    <link rel="icon" type="image/png" href="../assets/Icono-Musica.png">
     <title>Ticket</title>
 </head>
 <body>
     <header>
-        <h1>Nombre de la Empresa</h1>
-        <h2>Ticket de Compra</h2>
+        <div id="logo">
+            <img src="../assets/Icono-Musica.png" alt="LOGO">
+        </div>
+        <div id="titulo">
+            <h1>Ticket de Compra</h1>
+        </div>
+        
     </header>
 
     <main id="ticket-container">
-        <p><strong>Cliente:</strong> <span id="nombre-cliente"></span></p>
-        <p><strong>Fecha:</strong> <span id="fecha"></span></p>
 
-        <table id="tabla-ticket">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody id="detalle-ticket"></tbody>
-        </table>
+        <section id="ticket">
+            <p><strong>Cliente:</strong> <span id="nombre-cliente"></span></p>
+            <p><strong>Fecha:</strong> <span id="fecha"></span></p>
 
-        <p id="total-ticket"><strong>Total:</strong> $<span id="total-compra"></span></p>
+            <table id="tabla-ticket">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="detalle-ticket"></tbody>
+            </table>
 
-        <div class="botones-ticket">
-            <button id="descargar-pdf">Descargar PDF</button>
-            <button id="volver-inicio">Volver al Inicio</button>
-        </div>
+            <p id="total-ticket"><strong>Total:</strong> $<span id="total-compra"></span></p>
+
+            <div class="botones-ticket">
+                <button id="descargar-pdf">Descargar PDF</button>
+                <button id="volver">Volver al Inicio</button>
+            </div>
+        </section>
     </main>
 
-    <script src="ticket.js"></script>
+    <footer>
+        <p>Alejo Valentin Podbielski / Juan Manuel Depaolo </p>
+    </footer>
+
     
 </body>
 </html>

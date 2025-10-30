@@ -5,6 +5,7 @@ const fechaActual = new Date().toLocaleDateString();
 document.getElementById("nombre-cliente").textContent = nombreCliente;
 document.getElementById("fecha").textContent = fechaActual;
 
+
 const detalle = document.getElementById("detalle-ticket");
 let total = 0;
 
@@ -21,11 +22,14 @@ carrito.forEach(p => {
 
 document.getElementById("total-compra").textContent = total.toFixed(2);
 
+//DESCAGA EL PDF
 document.getElementById("descargar-pdf").addEventListener("click", () => {
     window.print();
 });
 
-document.getElementById("volver-inicio").addEventListener("click", () => {
-    localStorage.clear();
-    window.location.href = "bienvenida.html";
+
+//VUELVE A LA PANTALLA CARRITO
+document.getElementById("volver").addEventListener("click", () => {  
+    window.location.href = "carrito.html";
 });
+

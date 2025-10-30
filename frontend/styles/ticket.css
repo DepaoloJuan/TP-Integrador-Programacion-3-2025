@@ -5,7 +5,38 @@ body{
 
 
 header{
-     display: flex;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
     align-items: center;     /* Centrado vertical */
-    justify-content: space-between; /*Alinia los elementos de forma horizontal dejando un mismo espacio entre ellos*/
+    justify-content: center; /* Centrado horizontal*/
+   
+}
+
+
+main{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center;
+    flex-direction: column; /* Apila todo de arriba a bajo como columna*/
+    
+}
+
+#ticket{
+    background-color: aqua;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+footer{
+    height: 5vh;
+    display: flex;
+    align-items: center;     /* Centrado vertical */
+}
+
+#logo img{
+    width: 150px;
+    height: 150px;
 }
