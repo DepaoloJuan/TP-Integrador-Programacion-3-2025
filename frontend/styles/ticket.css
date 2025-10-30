@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+     display: flex;
+    align-items: center;     /* Centrado vertical */
+    justify-content: space-between; /*Alinia los elementos de forma horizontal dejando un mismo espacio entre ellos*/
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/ticket.css">
+    <script defer src="../ticket.js"></script>
+    <title>Ticket</title>
+</head>
+<body>
+    <header>
+        <h1>Nombre de la Empresa</h1>
+        <h2>Ticket de Compra</h2>
+    </header>
+
+    <main id="ticket-container">
+        <p><strong>Cliente:</strong> <span id="nombre-cliente"></span></p>
+        <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+
+        <table id="tabla-ticket">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="detalle-ticket"></tbody>
+        </table>
+
+        <p id="total-ticket"><strong>Total:</strong> $<span id="total-compra"></span></p>
+
+        <div class="botones-ticket">
+            <button id="descargar-pdf">Descargar PDF</button>
+            <button id="volver-inicio">Volver al Inicio</button>
+        </div>
+    </main>
+
+    <script src="ticket.js"></script>
+    
+</body>
+</html>
