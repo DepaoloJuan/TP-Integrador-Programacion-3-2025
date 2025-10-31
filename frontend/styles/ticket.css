@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(241, 232, 222);
 }
 
 
@@ -9,7 +10,7 @@ header{
     height: 15vh;
     display: flex;
     align-items: center;     /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal*/
+    
    
 }
 
@@ -25,10 +26,22 @@ main{
 }
 
 #ticket{
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 50px;
+    transition: transform 0.25s ease;
+    font-size: 1.5rem;
+   
 }
+
+#ticket:hover {
+  transform: scale(1.02);
+}
+
+#volver{
+    margin-left: 0;
+}
+
 
 footer{
     height: 5vh;
