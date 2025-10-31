@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: rgb(25, 209, 68);
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+
+}
+
+h1{
+    margin: 0;
+}

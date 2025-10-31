@@ -9,10 +9,10 @@ header{
     width: 100vw;
     height: 15vh;
     display: flex;
-    align-items: center;     /* Centrado vertical */
-    
-   
+    align-items: center;     /* Centrado vertical */  
+    justify-content: space-between; 
 }
+
 
 
 main{
@@ -28,9 +28,11 @@ main{
 #ticket{
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
+    border: 2px solid #ccc;
     padding: 50px;
     transition: transform 0.25s ease;
     font-size: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
    
 }
 
@@ -49,7 +51,29 @@ footer{
     align-items: center;     /* Centrado vertical */
 }
 
-#logo img{
+img{
     width: 150px;
     height: 150px;
+}
+
+#volver {
+  
+    background: rgb(255, 255, 255);
+    border: 2px solid #ccc;
+    border-radius: 10px; 
+    
+    font-size: 50px; /* Tamaño grande para la flecha */
+    width: 70px;     /* Ancho fijo para el botón */
+    height: auto;    /* Altura fija para el botón */
+    
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+    transition: transform 0.25s ease;
+    
+}
+
+#volver:hover {
+  transform: scale(1.02);
 }
