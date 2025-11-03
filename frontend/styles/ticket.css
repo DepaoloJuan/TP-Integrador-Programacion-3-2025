@@ -4,15 +4,22 @@ body{
     background-color: rgb(241, 232, 222);
 }
 
-
 header{
-    width: 100vw;
-    height: 15vh;
+    background-color: black;
     display: flex;
     align-items: center;     /* Centrado vertical */  
     justify-content: space-between; 
 }
 
+header h1{
+    color: azure;
+    margin: 10px;
+}
+
+img{
+    width: 150px;
+    height: 130px;
+}
 
 
 main{
@@ -40,9 +47,6 @@ main{
   transform: scale(1.02);
 }
 
-#volver{
-    margin-left: 0;
-}
 
 
 footer{
@@ -51,10 +55,6 @@ footer{
     align-items: center;     /* Centrado vertical */
 }
 
-img{
-    width: 150px;
-    height: 150px;
-}
 
 #volver {
   
@@ -62,8 +62,8 @@ img{
     border: 2px solid #ccc;
     border-radius: 10px; 
     
-    font-size: 50px; /* Tamaño grande para la flecha */
-    width: 70px;     /* Ancho fijo para el botón */
+    font-size: 30px; /* Tamaño grande para la flecha */
+    width: 100%;     /* Ancho fijo para el botón */
     height: auto;    /* Altura fija para el botón */
     
     display: flex; 

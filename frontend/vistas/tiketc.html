@@ -3,56 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
     <link rel="stylesheet" href="../styles/ticket.css">
     <script defer src="../ticket.js"></script>
-    <link rel="icon" type="image/png" href="../assets/Icono-Musica.png">
-    <title>Ticket</title>
 </head>
 <body>
+
     <header>
-        <button id="volver" aria-label="Volver">
-            &larr; 
-        </button>
-        
-         <div id="titulo">
-            <h1>Ticket de Compra</h1>
-        </div>
-        <div id="logo">
-            <img src="../assets/Icono-Musica.png" alt="LOGO">
-        </div>
-       
-        
+        <img src="css/Logo_Trabajo.png" alt="LOGO">
+        <h1>Ticket</h1>
     </header>
 
-    <main id="ticket-container">
-
-        <section id="ticket">
-            <p><strong>Cliente:</strong> <span id="nombre-cliente"></span></p>
+    <main class="contenedor-ticket">
+        <div id="ticket" class="ticket">
+            <h2>🧾 Ticket de compra</h2>
+            <p>¡Gracias por tu compra, <strong id="nombre-usuario"></strong>!</p>
+            <section id="productos"></section>
+            <p><strong>Total:</strong> $<span id="total"></span></p>
             <p><strong>Fecha:</strong> <span id="fecha"></span></p>
-
-            <table id="tabla-ticket">
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody id="detalle-ticket"></tbody>
-            </table>
-
-            <p id="total-ticket"><strong>Total:</strong> $<span id="total-compra"></span></p>
-
-            <div class="botones-ticket">
-                <button id="descargar-pdf">Descargar PDF</button>
-            </div>
-        </section>
+            <button id="volver">Volver al carrito</button>
+        </div>
     </main>
 
-    <footer>
+     <footer>
         <p>Alejo Valentin Podbielski / Juan Manuel Depaolo </p>
     </footer>
 
-    
 </body>
 </html>
