@@ -11,5 +11,5 @@ formNombre.addEventListener("submit", function (event) {
   }
   localStorage.setItem("nombreUsuario", nombreUsuario); // guardamos el nombre en localstorage
 
-  window.location.href = "../index.html"; //nos lleva a la pagina principal
+  window.location.href = "../vistas/index.html"; //nos lleva a la pagina principal
 });
