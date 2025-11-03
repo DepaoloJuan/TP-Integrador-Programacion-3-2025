@@ -4,14 +4,75 @@ body{
 }
 
 header{
-    background-color: rgb(25, 209, 68);
-    width: 100vw;
-    height: 10vh;
+    background-color: black;
     display: flex;
-    align-items: center; /* Centrado vertical */
-
+    align-items: center;     /* Centrado vertical */
+    justify-content: space-between; /* Espacio por igual entre elemntos*/
 }
 
-h1{
-    margin: 0;
+header h1{
+    color: azure;
+    margin: 10px;
 }
+
+img{
+    width: 150px;
+    height: 130px;
+}
+
+main{
+    display: flex;
+    align-items: center;     /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    flex-direction: column;
+}
+
+.item-carrito{
+    display: flex;
+    align-items: center;     /* Centrado vertical */
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    transition: transform 0.25s ease;
+    width: 201px;
+}
+
+.item-carrito:hover {
+  transform: scale(1.02);
+}
+
+#lista-carrito{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.boton-restar, .boton-sumar {
+    width: 150px;
+    margin: 5px;
+    color: black;
+    font-size: 1.15rem;
+}
+
+.boton-restar {
+    background-color: rgb(255, 58, 58); 
+}
+.boton-sumar {
+    background-color: rgb(90, 249, 90); 
+}
+
+
+
+footer{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+}
+   
