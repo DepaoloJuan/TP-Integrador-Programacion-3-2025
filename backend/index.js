@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 // iniciamos el servidor
-app.listen(PORT, () => {
+app.listen(PORT, () => { // Pone al servidor a escuchar peticiones en el puerto indicado.
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
 
