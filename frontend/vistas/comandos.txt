@@ -1,4 +1,25 @@
-LEVANTAR SERVIDOR npm run dev
+LEVANTAR SERVIDOR --- npm run dev
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+FETCH --- es una función nativa de JavaScript que sirve para hacer peticiones HTTP (por ejemplo, pedir datos a una API).
+
+respuesta.ok → true si el status es 200–299 (es decir, éxito)
+
+respuesta.status → el código HTTP (200, 404, 500, etc.)
+
+respuesta.json() → un método que lee el cuerpo y lo convierte a un objeto JS.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+AWAIT --- se usa solo dentro de funciones async y su función es esperar a que una promesa se resuelva antes de continuar.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+PAYLOAD --- Esto hace que se carguen los datos importantes de un jason y hacen que se muestren diferentes como un pretty de mongo
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+cd "C:\Users\Usuario\Desktop\Integrador\TP-Integrador-Programacion-3-2025\backend"
 
 Esto despues lo borro juan es para anotarme cosas que voy probando en el momento

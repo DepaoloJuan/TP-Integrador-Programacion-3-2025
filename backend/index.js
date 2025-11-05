@@ -1,11 +1,11 @@
-// importamos las funciones necesarias de express
-import express from "express";
-import environments from "./src/api/config/environments.js";
-import connection from "./src/api/database/db.js";
-import cors from "cors";
-const app = express();
 
-const PORT = environments.PORT;
+import express from "express"; // Nos ayuda a crear servidores localmente
+import environments from "./src/api/config/environments.js"; // Variables de entorno
+import connection from "./src/api/database/db.js";
+import cors from "cors"; // Permite que el front haga peticiones al back
+
+const app = express(); // Crea una instancia de Express.
+const PORT = environments.PORT; // Guarda el puerto donde va a escuchar el servidor.
 
 // Middleware para habilitar CORS
 app.use(cors());
