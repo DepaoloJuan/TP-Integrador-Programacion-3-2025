@@ -17,3 +17,5 @@ npm install express mysql2 nodemon dotenv
 --Creacion de .gitignore y .env
 --Creamos un script personalizado en package.json
 --Agregamos el type module para poder usar sintaxis moderna ES6
+
+npm run dev -- para iniciar

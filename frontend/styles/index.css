@@ -183,12 +183,6 @@ footer {
   line-height: 1.2;
 }
 
-/* Tipo (rock nacional 70s, etc.) */
-.card-producto .tipo {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
-}
 
 /* Precio */
 .card-producto .precio {

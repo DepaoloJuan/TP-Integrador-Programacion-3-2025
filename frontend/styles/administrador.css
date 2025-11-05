@@ -1,0 +1,80 @@
+/* ===== Variables mínimas ===== */
+:root{
+  --c-pri:#010801;
+  --c-pri-h:#08274b;
+  --c-fondo:#f8f9fa;
+  --c-txt:#333;
+  --c-blanco:#fff;
+  --c-borde:#ccc;
+  --sombra:0 2px 6px rgba(0,0,0,.1);
+  --font:Arial, sans-serif;
+}
+
+/* ===== Base ===== */
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);background:var(--c-fondo);color:var(--c-txt)}
+img{max-width:100%;display:block}
+
+/* ===== Utilidades simples ===== */
+.btn{background:var(--c-pri);color:var(--c-blanco);border:0;border-radius:8px;padding:10px 14px;cursor:pointer}
+.btn:hover{background:var(--c-pri-h)}
+.card{background:var(--c-blanco);border:1px solid var(--c-borde);border-radius:10px;box-shadow:var(--sombra);padding:12px}
+
+/* ===== Header común ===== */
+header{display:flex;justify-content:space-between;align-items:center;background:var(--c-pri);color:var(--c-blanco);padding:12px 18px}
+header h1{margin:0;font-size:1.4rem}
+#info-carrito{background:var(--c-blanco);color:var(--c-pri);padding:4px 10px;border-radius:8px;font-weight:700}
+
+/* ===== Layout general (contenido + carrito) ===== */
+main{display:flex;gap:16px;padding:16px}
+main > section{flex:1;min-width:0}          /* área productos o contenido */
+aside#carrito{width:280px;background:var(--c-blanco);border:1px solid var(--c-borde);border-radius:10px;box-shadow:var(--sombra);padding:12px}
+#carrito h2{text-align:center;margin:0 0 10px;color:var(--c-pri)}
+#carrito button{width:100%;margin-top:8px}   /* aprovecha .btn */
+
+/* ===== Lista de productos (grid adaptable sin media queries) ===== */
+#lista-productos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+}
+
+/* ===== Tarjeta de producto ===== */
+.card-producto{ /* usa .card + algunos toques */
+  background:var(--c-blanco);border:1px solid var(--c-borde);border-radius:10px;box-shadow:var(--sombra);
+  padding:12px;display:flex;flex-direction:column;gap:8px
+}
+.card-producto img{height:200px;object-fit:cover;border-radius:8px;background:#eee}
+.card-producto h3{margin:0;font-size:1rem;line-height:1.2}
+.card-producto .tipo{margin:0;color:#666;font-size:.9rem}
+.card-producto .precio{margin:0;font-weight:700;color:var(--c-pri)}
+.btn-agregar{ /* botón de la card */
+  background:var(--c-pri);color:var(--c-blanco);border:0;border-radius:8px;padding:8px;cursor:pointer
+}
+.btn-agregar:hover{background:var(--c-pri-h)}
+
+/* ===== Lista interna del carrito ===== */
+#carrito-items{list-style:none;margin:8px 0;padding:0;max-height:240px;overflow:auto}
+#carrito-items li{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:4px 0}
+
+/* ===== Pantalla de Bienvenida ===== */
+.pantalla-bienvenida{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--c-fondo);padding:16px}
+.panel-bienvenida{background:var(--c-blanco);border:1px solid var(--c-borde);border-radius:16px;box-shadow:var(--sombra);padding:28px;max-width:420px;width:100%;text-align:center}
+.titulo-app{margin:0 0 8px;color:var(--c-pri)}
+.subtitulo-app{margin:0 0 16px;color:#555}
+.form-nombre{display:flex;flex-direction:column;gap:10px}
+.campo-nombre{padding:10px;border:1px solid var(--c-borde);border-radius:10px;text-align:center}
+
+/* ===== Página Carrito dedicada (reutiliza lo de arriba) ===== */
+.item-carrito{border:2px solid var(--c-borde);border-radius:10px;padding:8px;margin:8px;width:200px}
+#lista-carrito{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.boton-restar{background:#ff3a3a}.boton-sumar{background:#5af95a}
+
+/* ===== Página Ticket ===== */
+.ticket-layout{width:100vw;height:80vh;display:flex;align-items:center;justify-content:center;flex-direction:column}
+#ticket{background:var(--c-blanco);border:2px solid var(--c-borde);border-radius:16px;box-shadow:var(--sombra);padding:36px;font-size:1.3rem}
+#volver{background:var(--c-blanco);border:2px solid var(--c-borde);border-radius:10px;font-size:28px;padding:10px 14px;display:flex;align-items:center;justify-content:center}
+
+/* ===== Footer ===== */
+footer{background:var(--c-pri);color:var(--c-blanco);text-align:center;padding:10px;margin-top:16px}
+

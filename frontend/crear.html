@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp Integrador Front</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="vistas/index.html">Ver</a></li>
+                <li><a href="consultar.html">Consultar id</a></li>
+                <li><a href="crear.html">Crear</a></li>
+                <li><a href="modificar.html">Modificar</a></li>
+                <li><a href="eliminar.html">Eliminar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Crear producto</h1>
+        <hr>
+       <form id="altaProducs-form">
+    <label for="nameProd">Nombre del producto</label>
+    <input type="text" name="nombre" id="nameProd" required> 
+    
+    <label for="imageProd">Url imagen</label>
+    <input type="text" name="imagen" id="imageProd" required>
+
+    <label for="categoryProd">categoria</label>
+    <select name="tipo" id="categoryProd" required> 
+        <option value="rock">Rock Nacional</option>
+        <option value="pop">Pop</option>
+        <option value="metal">Metal</option>
+        <option value="punk">Punk</option>
+    </select>
+    
+    <label for="priceProd">Precio</label>
+    <input type="number" name="precio" id="priceProd" required>
+    
+    <br>
+    <input type="submit" value="Crear producto">
+</form>
+        <div id="contenedor_productos">
+            <ul id="lista_productos"></ul>
+        </div>
+    </main>
+    <script>
+        let contenedor_productos = document.getElementById('contenedor_productos');
+        let altaProductsForm = document.getElementById('altaProducs-form');
+        let url = 'http://localhost:3000/products';
+        altaProductsForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            let formData = new FormData(event.target);
+            let data = Object.fromEntries(formData.entries());
+
+            try {
+                let response = await fetch(url,{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                if (response.ok){
+                    let resultado = await response.json();
+                    console.log('Producto creado:', resultado);
+                } 
+
+
+            }catch (error) {
+                console.error('Error al crear el producto:', error);
+            }
+        });
+    </script>
+
