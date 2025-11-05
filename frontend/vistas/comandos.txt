@@ -1,0 +1,4 @@
+LEVANTAR SERVIDOR npm run dev
+
+
+Esto despues lo borro juan es para anotarme cosas que voy probando en el momento
