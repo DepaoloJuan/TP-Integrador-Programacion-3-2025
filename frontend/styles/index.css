@@ -23,6 +23,7 @@ body {
   display: flex; /* Habilita flexbox para el cuerpo */
   flex-direction: column; /* Organiza los hijos en una columna */
   min-height: 100vh; /
+ 
 }
 
 /*==========================================================
@@ -32,7 +33,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;     /* Centrado vertical */
-  background-color: var(--color-principal);
+  background-color:rgb(0, 0, 0);
   color: var(--color-blanco);
 }
 
@@ -49,6 +50,7 @@ header img{
 /*==========================================================
                          FOOTER
 ========================================================== */
+
 footer {
   width: 100%;
   background-color: var(--color-principal);
@@ -60,9 +62,6 @@ footer {
   position: fixed;
   bottom: 0; 
 }
-
-
-
 
 /* ================================================================
                      PANTALLA BIENVENIDA
@@ -106,8 +105,9 @@ footer {
   flex-direction: column; /* carrito arriba, productos abajo */
   align-items: center;
   gap: 30px; /* separación entre carrito y productos */
-  padding: 20px 0;
-  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 80px; 
+  flex-wrap: wrap;
 }
 
 
@@ -115,8 +115,7 @@ footer {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos bajen a la siguiente fila */
   align-items: center;
-  height: 400px;
-
+ 
 }
 
 
@@ -131,7 +130,7 @@ footer {
   text-align: left;
   flex-direction: column;
   width: 200px;
-  height: 320px;
+  height: 330px;
   margin: 5px;
   padding: 15px;
 }

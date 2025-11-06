@@ -1,4 +1,6 @@
 let contenedorProductos = document.getElementById("lista-productos");
+const botonConfirmar = document.getElementById("btn-confirmar");
+
 
 async function obtenerProductos() {
 
@@ -25,13 +27,19 @@ function mostrarProductos(productos) {
             <img src="../assets/${producto.imagen}" alt="${producto.nombre}" />
             <h3>${producto.nombre}</h3>
             <p class="tipo">${producto.tipo}</p>
-            <p class="precio">$${producto.precio}</p>
+            <p class="precio">$${producto.precio} 
+                <button class="btn-agregar" data-id="${producto.id}">Agregar</button>
+            </p>
             </div>
         `;
   });
   contenedorProductos.innerHTML = htmlProductos;
 }
 
+
+botonConfirmar.addEventListener("click", () => {
+    window.location.href = "carrito.html";
+});
 
 function init() {
   obtenerProductos();
