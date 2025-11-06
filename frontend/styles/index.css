@@ -13,26 +13,29 @@
   --fuente-principal: "Arial", sans-serif;
 }
 
-/* ==========================================================
-   ESTILOS GENERALES
-   ========================================================== */
+/*==========================================================
+                  ESTILOS GENERALES
+========================================================== */
 body {
   margin: 0;
+  padding: 0;
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo);
   color: var(--color-texto);
+  display: flex; /* Habilita flexbox para el cuerpo */
+  flex-direction: column; /* Organiza los hijos en una columna */
+  min-height: 100vh; /
 }
 
-/* ==========================================================
-   HEADER
-   ========================================================== */
+/*==========================================================
+                       HEADER
+========================================================== */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;     /* Centrado vertical */
   background-color: var(--color-principal);
   color: var(--color-blanco);
-  padding: 15px 25px;
 }
 
 header h1 {
@@ -40,51 +43,43 @@ header h1 {
   font-size: 1.8rem;
 }
 
-#info-carrito {
-  background-color: var(--color-blanco);
-  color: var(--color-principal);
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-weight: bold;
+header img{
+  width: 150px;
+  height: 130px;
 }
 
-/* ==========================================================
-   MAIN
-   ========================================================== */
+
+/*==========================================================
+                          MAIN
+========================================================== */
 main {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   gap: 20px;
 }
 
-/* ==========================================================
-   SECCIÓN DE PRODUCTOS
-   ========================================================== */
-#lista-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+section{
+    height: 100vh;
 }
-
-
-/* Botón agregar */
-.btn-agregar {
+/*==========================================================
+                         FOOTER
+========================================================== */
+footer {
   background-color: var(--color-principal);
   color: var(--color-blanco);
-  border: none;
-  padding: 8px 15px;
-  border-radius: 6px;
-  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
 
-.btn-agregar:hover {
-  background-color: var(--color-principal-hover);
-}
 
-/* ==========================================================
-   ASIDE (CARRITO)
-   ========================================================== */
+
+
+/*==========================================================
+                     ASIDE (CARRITO)
+===========================================================*/
 #carrito {
   width: 280px;
   background-color: var(--color-blanco);
@@ -132,50 +127,76 @@ main {
   background-color: var(--color-principal-hover);
 }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
-footer {
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
+
+
+/* ================================================================
+                     PANTALLA BIENVENIDA
+=================================================================*/
+.pantalla-bienvenida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa toda la altura */
+  background-color: var(--color-fondo);
+}
+
+.panel-bienvenida {
+  background-color: var(--color-blanco);
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px var(--color-sombra);
   text-align: center;
-  padding: 10px;
-  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+  transition: transform 0.25s ease;
+}
+
+.panel-bienvenida:hover {
+  transform: scale(1.02);
 }
 
 
-/* ==========================================================
-   TARJETAS DE PRODUCTO
-   ========================================================== */
-.card-producto {
+/* ================================================================
+                     PANTALLA INDEX
+=================================================================*/
+
+
+#lista-productos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos bajen a la siguiente fila */
+  align-items: center;
+  height: 400px;
+
+}
+
+.card-producto { /*TARJETAS DE PRODUCTOS*/
   background-color: var(--color-blanco);
   border: 1px solid var(--color-borde);
   border-radius: 10px;
   box-shadow: 0 2px 4px var(--color-sombra);
-  padding: 15px;
-  text-align: left;
   transition: transform 0.2s;
   display: flex;
+  text-align: left;
   flex-direction: column;
-  gap: 8px;
+  width: 200px;
+  height: 320px;
+  margin: 5px;
+  padding: 15px;
 }
 
 .card-producto:hover {
   transform: scale(1.03);
 }
 
-/* Imagen dentro de la tarjeta */
-.card-producto img {
+.card-producto img { /* Imagen dentro de la tarjeta */
   width: 100%;
   height: 220px;
-  object-fit: cover;          /* recorta sin deformar */
   border-radius: 8px;
+  object-fit: cover;          /* recorta sin deformar */
   background-color: #eee;     /* por si falta imagen */
-  flex-shrink: 0;
 }
 
-/* Título del producto */
-.card-producto h3 {
+.card-producto h3 { /* Título del producto */
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
@@ -183,15 +204,30 @@ footer {
   line-height: 1.2;
 }
 
-
-/* Precio */
-.card-producto .precio {
+.card-producto .precio { /* Precio */
   margin: 0;
   font-weight: bold;
   color: var(--color-principal);
   font-size: 1rem;
 }
 
+.btn-agregar { /* Botón agregar */
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
+.btn-agregar:hover {
+  background-color: var(--color-principal-hover);
+}
 
-
+#info-carrito {
+  background-color: var(--color-blanco);
+  color: var(--color-principal);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}

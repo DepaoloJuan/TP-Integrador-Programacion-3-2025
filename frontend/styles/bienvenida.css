@@ -3,28 +3,7 @@
     Usa variables globales definidas en index.css
 */
 
-.pantalla-bienvenida {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* ocupa toda la altura */
-  background-color: var(--color-fondo);
-}
 
-.panel-bienvenida {
-  background-color: var(--color-blanco);
-  padding: 50px 60px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 20px var(--color-sombra);
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-  transition: transform 0.25s ease;
-}
-
-.panel-bienvenida:hover {
-  transform: scale(1.02);
-}
 
 .titulo-app {
   font-size: 1.6rem;
