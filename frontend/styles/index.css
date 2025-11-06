@@ -1,18 +1,16 @@
 /* ==========================================================
-   VARIABLES GLOBALES
-
-   ========================================================== */
+                  VARIABLES GLOBALES
+==========================================================*/
 :root {
   --color-principal: #010801;     /* Color dominante (header, botones) */
   --color-principal-hover: #08274b; /* Versión más clara para hover */
-  --color-fondo: #f8f9fa;         /* Fondo general */
+  --color-fondo: #b6b6b6;         /* Fondo general */
   --color-texto: #333;            /* Texto principal */
   --color-blanco: #ffffff;        /* Blanco puro */
-  --color-borde: #ccc;            /* Bordes suaves */
+  --color-borde: #fff0f0;            /* Bordes suaves */
   --color-sombra: rgba(0, 0, 0, 0.1);
   --fuente-principal: "Arial", sans-serif;
 }
-
 /*==========================================================
                   ESTILOS GENERALES
 ========================================================== */
@@ -48,98 +46,39 @@ header img{
   height: 130px;
 }
 
-
-/*==========================================================
-                          MAIN
-========================================================== */
-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  gap: 20px;
-}
-
-section{
-    height: 100vh;
-}
 /*==========================================================
                          FOOTER
 ========================================================== */
 footer {
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-
-
-
-/*==========================================================
-                     ASIDE (CARRITO)
-===========================================================*/
-#carrito {
-  width: 280px;
-  background-color: var(--color-blanco);
-  border-radius: 10px;
-  border: 1px solid var(--color-borde);
-  padding: 15px;
-  box-shadow: 0 2px 6px var(--color-sombra);
-}
-
-#carrito h2 {
-  text-align: center;
-  color: var(--color-principal);
-}
-
-#carrito-items {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  max-height: 250px;
-  overflow-y: auto;
-}
-
-#carrito-items li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 4px;
-}
-
-/* Botones del carrito */
-#carrito button {
-  display: block;
   width: 100%;
-  margin-top: 10px;
   background-color: var(--color-principal);
   color: var(--color-blanco);
-  border: none;
   padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 33%; /* Separa los textos */
+  position: fixed;
+  bottom: 0; 
 }
 
-#carrito button:hover {
-  background-color: var(--color-principal-hover);
-}
 
 
 
 /* ================================================================
                      PANTALLA BIENVENIDA
 =================================================================*/
+#main-bienvenida{
+  flex: 1; /* ocupa todo el espacio libre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .pantalla-bienvenida {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* ocupa toda la altura */
   background-color: var(--color-fondo);
 }
-
 .panel-bienvenida {
   background-color: var(--color-blanco);
   padding: 50px 60px;
@@ -150,7 +89,6 @@ footer {
   max-width: 400px;
   transition: transform 0.25s ease;
 }
-
 .panel-bienvenida:hover {
   transform: scale(1.02);
 }
@@ -161,6 +99,18 @@ footer {
 =================================================================*/
 
 
+#main-index {
+  width: 90%;
+  margin: 0 auto; /* centra el main */
+  display: flex;
+  flex-direction: column; /* carrito arriba, productos abajo */
+  align-items: center;
+  gap: 30px; /* separación entre carrito y productos */
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+
 #lista-productos {
   display: flex;
   flex-wrap: wrap; /* Permite que los elementos bajen a la siguiente fila */
@@ -168,6 +118,8 @@ footer {
   height: 400px;
 
 }
+
+
 
 .card-producto { /*TARJETAS DE PRODUCTOS*/
   background-color: var(--color-blanco);
@@ -231,3 +183,54 @@ footer {
   border-radius: 8px;
   font-weight: bold;
 }
+
+/*==========================================================
+                     ASIDE (CARRITO)
+===========================================================*/
+#carrito {
+  width: 280px;
+  background-color: var(--color-blanco);
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  padding: 15px;
+  box-shadow: 0 2px 6px var(--color-sombra);
+}
+
+#carrito h2 {
+  text-align: center;
+  color: var(--color-principal);
+}
+
+#carrito-items {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#carrito-items li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+/* Botones del carrito */
+#carrito button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#carrito button:hover {
+  background-color: var(--color-principal-hover);
+}
+
