@@ -6,47 +6,61 @@
     <title>Tienda - TP Integrador</title>
     <link rel="stylesheet" href="../styles/index.css">
     <script defer src="../index.js"></script>
+    <script defer src="../carrito.js"></script>
   </head>
 
   <body>
-   
-    <header>
+    <header class="header">
       <img src="../assets/Logo_Trabajo.png" alt="LOGO">
       <h1>Tienda de Música</h1>
-      <div id="info-carrito">
+
+      <!-- Botón que abre/cierra el dropdown -->
+      <button id="btn-carrito" class="boton boton--carrito" aria-expanded="false" aria-controls="panel-carrito">
         Carrito (<span id="carrito-cantidad">0</span>)
+      </button>
+
+      <!-- Panel carrito (inicia oculto) -->
+      <div id="panel-carrito" class="carrito-dropdown oculto" role="dialog" aria-labelledby="titulo-carrito">
+        <div class="carrito-dropdown__contenido">
+          <h2 id="titulo-carrito">Carrito</h2>
+
+          <!-- Lista de ítems del carrito -->
+          <div id="contenedor-carrito" class="carrito-items">
+            <!-- Aquí se inyectan los productos agregados -->
+          </div>
+
+          <!-- Total + acciones -->
+          <div class="carrito-acciones">
+            <div class="carrito-total">
+              Total: $ <span id="total-carrito">0</span>
+            </div>
+            <div class="carrito-botones">
+              <button id="vaciar-carrito" class="boton boton--secundario">Vaciar carrito</button>
+              <a class="boton" href="tiketc.html">Confirmar compra</a>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-  
     <main id="main-index">
-      
-      <div id="carrito">
-        <h2>Carrito</h2>
-        <ul id="carrito-items"></ul>
-        <p>Total: $ <span id="carrito-total">0</span></p>
-        <div class="carrito-botones">
-          <button id="btn-vaciar">Vaciar carrito</button>
-          <button id="btn-confirmar">Confirmar compra</button>
+      <!-- Buscador y acciones -->
+      <section class="buscador">
+        <input id="barra-busqueda" type="text" placeholder="Buscar discos..." />
+        <div class="acciones">
+          <button id="boton-ordenar-nombre" class="boton boton--secundario">Ordenar A-Z</button>
+          <button id="boton-ordenar-precio" class="boton boton--secundario">Ordenar por precio</button>
         </div>
-      </div>
+      </section>
 
-     
-      
-      <h2>Productos disponibles</h2>
-      <div id="lista-productos"></div>
-      
-
+      <h2 class="subtitulo">Productos disponibles</h2>
+      <div id="lista-productos" class="grid-productos"></div>
     </main>
 
-
-    <!-- =============FOOTER===========-->    
     <footer>
-        <small>Juan Depaolo / Alejo Podbielski</small>
-        <small>TP Integrador Programación 3 - 2025</small>
-        <small>Div 334 LA MEJOR</small>
+      <small>Juan Depaolo / Alejo Podbielski</small>
+      <small>TP Integrador Programación 3 - 2025</small>
+      <small>Div 334 LA MEJOR</small>
     </footer>
-
-    
   </body>
 </html>

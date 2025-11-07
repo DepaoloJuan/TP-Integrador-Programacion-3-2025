@@ -1,9 +1,12 @@
 let contenedorProductos = document.getElementById("lista-productos");
-const botonConfirmar = document.getElementById("btn-confirmar");
-
+//const botonConfirmar = document.getElementById("btn-confirmar");
+const carritoItems = document.getElementById("contenedor-carrito");
+const carritoTotal = document.getElementById("total-carrito");
+const botonVaciar = document.getElementById("vaciar-carrito");
+const botonCarrito = document.getElementById("btn-carrito");
+const panelCarrito = document.getElementById("panel-carrito");
 
 async function obtenerProductos() {
-
   let url = "http://localhost:3000/products";
 
   try {
@@ -13,7 +16,6 @@ async function obtenerProductos() {
     console.log(productos.payload);
 
     mostrarProductos(productos.payload);
-
   } catch (error) {
     console.error("Error al obtener productos:", error); // Mostramos el error por consola.
   }
@@ -36,16 +38,67 @@ function mostrarProductos(productos) {
   contenedorProductos.innerHTML = htmlProductos;
 }
 
+/* ==========================================================
+   CARRITO DESPLEGABLE (versión con nombres simples)
+   - Permite abrir/cerrar el carrito desde el botón.
+   - Se cierra al hacer click afuera o al presionar Esc.
+========================================================== */
 
-botonConfirmar.addEventListener("click", () => {
-    window.location.href = "carrito.html";
-});
+/* ----------------------------------------------------------
+   2) accionCarrito(forzarCierre)
+   - Si forzarCierre es true, siempre lo cierra.
+   - Si es false o no se pasa, alterna (abre ↔ cierra).
+----------------------------------------------------------- */
+function accionCarrito(forzarCierre = false) {
+  if (!panelCarrito || !botonCarrito) return; // evita errores si no existen
+
+  const estaAbierto = !panelCarrito.classList.contains("oculto");
+
+  if (forzarCierre || estaAbierto) {
+    // Cierra el panel
+    panelCarrito.classList.add("oculto");
+    botonCarrito.setAttribute("aria-expanded", "false");
+  } else {
+    // Abre el panel
+    panelCarrito.classList.remove("oculto");
+    botonCarrito.setAttribute("aria-expanded", "true");
+  }
+}
+
+/* ----------------------------------------------------------
+   3) Escuchadores de eventos
+----------------------------------------------------------- */
+if (botonCarrito && panelCarrito) {
+  // CLICK en el botón → abrir o cerrar
+  botonCarrito.addEventListener("click", (evento) => {
+    evento.stopPropagation(); // evita que el click se propague
+    accionCarrito(); // alternar
+  });
+
+  // CLICK fuera del panel → cerrar
+  document.addEventListener("click", (evento) => {
+    const clickDentro = panelCarrito.contains(evento.target);
+    const clickEnBoton = evento.target === botonCarrito;
+
+    if (!clickDentro && !clickEnBoton) {
+      accionCarrito(true); // forzar cierre
+    }
+  });
+
+  // TECLA ESC → cerrar
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") {
+      accionCarrito(true);
+    }
+  });
+}
+
+//botonConfirmar.addEventListener("click", () => {
+// window.location.href = "carrito.html";
+//});
 
 function init() {
   obtenerProductos();
 }
 
 init(); // Inicia el js por init
-
-
-
