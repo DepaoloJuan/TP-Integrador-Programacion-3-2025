@@ -10,7 +10,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="vistas/index.html">Ver</a></li>
+                <li><a href="productos.html">Ver</a></li>
                 <li><a href="consultar.html">Consultar id</a></li>
                 <li><a href="crear.html">Crear</a></li>
                 <li><a href="modificar.html">Modificar</a></li>
@@ -46,6 +46,7 @@
              let respuesta = await fetch(url + idProd);
              let datos = await respuesta.json();
              console.log(datos);
+            
              let producto = datos.payload[0];
              
              let htmlProducto = `<li>
@@ -60,9 +61,29 @@
                 console.error('Error al consultar el producto:', error);
             }
         });
-             
+        
+        function mostrarProducto(producto) {
+            let htmlProducto = `<li>
+                <img src="assets/${producto.imagen}" alt="${producto.nombre}">
+                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
+                </li>`;
+            listaProductos.innerHTML = htmlProducto;
+        }
 
-           
+        
+    //hacer funcion mostrar productos, para despues agregar
+    //validacion  despues de let datos, if(respuesta.ok){} else{}
+        function mostrarError(mensaje) {
+            let htmlError = `
+            <li class="mensaje-error"> 
+                <p>
+                    <strong>Error:</strong>
+                    <span>${mensaje}</span>
+                </p>
+            </li>
+            `;
+                
+        }
 
     </script>
 </body>

@@ -1,0 +1,32 @@
+🧾 Lista de tareas pendientes
+
+#Reorganizar rutas de todos los archivos: mover las páginas HTML a la 
+carpeta vistas/ y los archivos JavaScript a la carpeta js/.
+
+#Agregar botón de Login en la pantalla de bienvenida (más adelante se 
+implementará su funcionalidad).
+
+#Diseñar y aplicar el CSS para las pantallas:
+ver, consultarid, crear, modificar y eliminar.
+
+#Verificar que todos los archivos relacionados con los discos utilicen 
+los mismos géneros en sus datos.
+
+#Agregar optimizaciones y validaciones en todos los formularios 
+(controlar campos vacíos, tipos de datos y valores permitidos).
+
+#Consultar.HTML
+##funcion mostrar productos, para   
+validacion  despues de let datos, if(respuesta.ok){} else{}
+
+
+
+##funtion mostrar error let htmlError =' 
+    <li class="message-error">
+    <p>
+    <strong> error
+    <span>$error
+    <p>
+    <li>
+
+
