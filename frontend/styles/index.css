@@ -119,6 +119,19 @@ footer {
   background: var(--color-principal-hover);
 }
 
+.login{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login:hover {
+  background-color: #0e77b8;
+}
+
+
 /* ==========================================================
    PANTALLA INDEX (productos + carrito)
 ========================================================== */
