@@ -30,11 +30,7 @@ export const getAllProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
   try {
     let { id } = req.params;
-    let sql = "SELECT * FROM productos WHERE productos.id = ?";
-
-    //limitar resultados de la consulta
-
-    let [rows] = await connection.query(sql, [id]);
+    let [rows] = await ProductModel.selectProductWhereId(id);
     // comprobar si existe el producto con el id
     if (rows.length === 0) {
       return res.status(404).json({
@@ -59,9 +55,7 @@ export const getProductById = async (req, res) => {
 export const createProduct = async (req, res) => {
   try {
     let { nombre, tipo, precio, imagen } = req.body;
-    let sql =
-      "INSERT INTO productos (nombre, tipo, precio, imagen) VALUES (?, ?, ?, ?)";
-    let [rows] = await connection.query(sql, [nombre, tipo, precio, imagen]);
+    let [rows] = await ProductModel.insertProduct(nombre, tipo, precio, imagen);
     res.status(201).json({
       message: "Producto creado exitosamente",
       productId: rows.insertId,
@@ -93,20 +87,15 @@ export const updateProduct = async (req, res) => {
     // ============================================================
     //  Query SQL parametrizada
     // ============================================================
-    let sql = `
-      UPDATE productos
-      SET nombre = ?, imagen = ?, tipo = ?, precio = ?, activo = ?
-      WHERE id = ?
-    `;
 
-    let [result] = await connection.query(sql, [
+    let [result] = await ProductModel.updateProduct(
       name,
       image,
       type,
       price,
       active,
-      id,
-    ]);
+      id
+    );
 
     console.log(result);
 
@@ -137,11 +126,10 @@ export const updateProduct = async (req, res) => {
 /* ===================================================
     ELIMINAR PRODUCTO
     =================================================== */
-export const deleteProduct = async (req, res) => {
+export const removeProduct = async (req, res) => {
   try {
     let { id } = req.params;
-    let sql = "DELETE FROM productos WHERE id = ?";
-    let [result] = await connection.query(sql, [id]);
+    let [result] = await ProductModel.deleteProduct(id);
     if (result.affectedRows === 0) {
       return res.status(404).json({
         message: `No se encontró el producto con id ${id}`,

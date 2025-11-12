@@ -6,7 +6,7 @@ import {
   getAllProducts,
   getProductById,
   createProduct,
-  deleteProduct,
+  removeProduct,
   updateProduct,
 } from "../../controllers/product.controllers.js";
 
@@ -35,7 +35,7 @@ router.post("/", createProduct);
    Elimina un producto según su ID
    =================================================== */
 
-router.delete("/:id", deleteProduct);
+router.delete("/:id", removeProduct);
 
 /* ===================================================
     Endpoint PUT /products
