@@ -22,7 +22,6 @@ const btnVaciarCarrito2 =
   document.getElementById("btn-vaciar"); // vista vieja
 
 const botonVolver = document.getElementById("volver"); // solo en carrito.html
-
 const contadorHeader = document.getElementById("carrito-cantidad"); // botón header
 
 /* -------------------------
