@@ -1,4 +1,5 @@
 import connection from "../api/database/db.js";
+import ProductModel from "../models/product.models.js";
 
 /* ===================================================
     GET /products
@@ -6,8 +7,7 @@ import connection from "../api/database/db.js";
    =================================================== */
 export const getAllProducts = async (req, res) => {
   try {
-    const sql = "SELECT * FROM productos";
-    const [rows] = await connection.query(sql);
+    const [rows] = await ProductModel.selectAllProducts();
     res.status(200).json({
       payload: rows,
       message:
