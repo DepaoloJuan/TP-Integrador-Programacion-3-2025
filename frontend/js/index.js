@@ -7,7 +7,7 @@ const botonCarrito = document.getElementById("btn-carrito");
 const panelCarrito = document.getElementById("panel-carrito");
 
 async function obtenerProductos() {
-  let url = "http://localhost:3000/products";
+  let url = "http://localhost:3000/api/products";
 
   try {
     let respuesta = await fetch(url); // Fetch hace una peticion a la url.

@@ -29,7 +29,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 a { color: inherit; text-decoration: none; }
+
+
 
 /* ==========================================================
    HEADER / FOOTER (comunes)
@@ -82,6 +85,20 @@ ul{
 
 ul a:hover {
     color: rgb(39, 128, 218); /* Cambia el color del texto a azul al pasar el ratón */
+}
+
+li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li img{
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  border-radius: var(--radius);
 }
 
 
@@ -308,3 +325,17 @@ ul a:hover {
   text-align: center;
   font-weight: 600;
 }
+
+
+
+
+
+
+
+
+#getproduct-form{
+  margin: 10px;
+}
+
+
+

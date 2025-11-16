@@ -13,3 +13,9 @@ formNombre.addEventListener("submit", function (event) {
 
   window.location.href = "../vistas/index.html"; //nos lleva a la pagina principal
 });
+
+
+document.getElementById('login').onclick = function() {
+    // La función window.location.href dirige el navegador a la URL especificada
+    window.location.href = "../productos.html"; 
+};

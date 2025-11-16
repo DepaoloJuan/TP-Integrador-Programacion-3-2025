@@ -1,4 +1,4 @@
-import connection from "../api/database/db.js";
+
 import ProductModel from "../models/product.models.js";
 
 /* ===================================================
@@ -128,16 +128,19 @@ export const updateProduct = async (req, res) => {
     =================================================== */
 export const removeProduct = async (req, res) => {
   try {
-    let { id } = req.params;
+    let { id } = req.params; // Obtenemos el id 
     let [result] = await ProductModel.deleteProduct(id);
-    if (result.affectedRows === 0) {
+
+    if (result.affectedRows === 0) { 
       return res.status(404).json({
         message: `No se encontró el producto con id ${id}`,
       });
     }
+
     return res.status(200).json({
       message: "Producto eliminado exitosamente",
     });
+
   } catch (error) {
     console.error("Error al eliminar producto:", error.message);
     res.status(500).json({
