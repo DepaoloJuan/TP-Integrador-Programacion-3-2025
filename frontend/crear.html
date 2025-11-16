@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <img src="../frontend/assets/Logo_Trabajo.png" alt="LOGO">
         <nav>
             <ul>
                 <li><a href="productos.html">Ver</a></li>
@@ -21,31 +22,40 @@
     <main>
         <h1>Crear producto</h1>
         <hr>
-       <form id="altaProducs-form">
-    <label for="nameProd">Nombre del producto</label>
-    <input type="text" name="nombre" id="nameProd" required> 
-    
-    <label for="imageProd">Url imagen</label>
-    <input type="text" name="imagen" id="imageProd" required>
 
-    <label for="categoryProd">categoria</label>
-    <select name="tipo" id="categoryProd" required> 
-        <option value="rock">Rock Nacional</option>
-        <option value="pop">Pop</option>
-        <option value="metal">Metal</option>
-        <option value="punk">Punk</option>
-    </select>
-    
-    <label for="priceProd">Precio</label>
-    <input type="number" name="precio" id="priceProd" required>
-    
-    <br>
-    <input type="submit" value="Crear producto">
-</form>
+       <form id="altaProducs-form">
+            <label for="nameProd">Nombre del producto</label>
+            <input type="text" name="nombre" id="nameProd" required> 
+            
+            <label for="imageProd">Url imagen</label>
+            <input type="text" name="imagen" id="imageProd" required>
+
+            <label for="categoryProd">categoria</label>
+            <select name="tipo" id="categoryProd" required> 
+                <option value="rock">Rock Nacional</option>
+                <option value="pop">Pop</option>
+                <option value="metal">Metal</option>
+                <option value="punk">Punk</option>
+            </select>
+            
+            <label for="priceProd">Precio</label>
+            <input type="number" name="precio" id="priceProd" required>
+            
+            <br>
+            <input type="submit" value="Crear producto">
+        </form>
+        
         <div id="contenedor_productos">
             <ul id="lista_productos"></ul>
         </div>
     </main>
+
+    <footer>
+      <small>Juan Depaolo / Alejo Podbielski</small>
+      <small>TP Integrador Programación 3 - 2025</small>
+      <small>Div 334 LA MEJOR</small>
+    </footer>
+
     <script>
         let contenedor_productos = document.getElementById('contenedor_productos');
         let altaProductsForm = document.getElementById('altaProducs-form');

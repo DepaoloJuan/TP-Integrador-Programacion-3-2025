@@ -11,6 +11,7 @@
 </head>
 <body>
      <header>
+        <img src="../frontend/assets/Logo_Trabajo.png" alt="LOGO">
         <nav>
             <ul>
                 <a href="productos.html">
@@ -34,11 +35,17 @@
     <main>
         <h1>Lista de productos</h1>
         <hr>
-        <div id="contenedor-productos"></div>
+        <div id="lista-productos"></div>
     </main>
 
+    <footer>
+      <small>Juan Depaolo / Alejo Podbielski</small>
+      <small>TP Integrador Programación 3 - 2025</small>
+      <small>Div 334 LA MEJOR</small>
+    </footer>
+
     <script>
-        let contenedorProductos = document.getElementById("contenedor-productos");
+        let contenedorProductos = document.getElementById("lista-productos");
 
         async function obtenerProductos() {
             try {

@@ -62,6 +62,29 @@ footer {
   font-size: 0.85rem;
 }
 
+nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+ul{
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none; /* Elimina el punto*/
+  cursor: pointer; /* Muestra la mano*/
+  font-size: 1.2rem;
+}
+
+ul a:hover {
+    color: rgb(39, 128, 218); /* Cambia el color del texto a azul al pasar el ratón */
+}
+
+
 /* ========================================================
    PANTALLA DE BIENVENIDA
 ==========================================================*/
