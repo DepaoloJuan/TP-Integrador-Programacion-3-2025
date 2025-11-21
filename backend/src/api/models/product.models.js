@@ -1,4 +1,4 @@
-import connection from "../api/database/db.js";
+import connection from "../database/db.js";
 
 /* ===================================================
     GET /products

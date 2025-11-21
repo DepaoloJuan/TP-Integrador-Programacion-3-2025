@@ -61,7 +61,7 @@
              let producto = datos.payload[0];
              
              let htmlProducto = `<li>
-                <img src="assets/${producto.imagen}" alt="${producto.nombre}">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
                 <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
                 </li>`;
 
@@ -75,7 +75,7 @@
         
         function mostrarProducto(producto) {
             let htmlProducto = `<li>
-                <img src="assets/${producto.imagen}" alt="${producto.nombre}">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
                 <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
                 </li>`;
             listaProductos.innerHTML = htmlProducto;
