@@ -48,6 +48,24 @@ app.use("/api/products", productRoutes); // Rutas
 app.get("/dashboard", (req, res) => {
     res.render("index");
 })
+app.get("/get", (req, res) => {
+    res.render("get");
+})
+app.get("/create", (req, res) => {
+    res.render("create");
+})
+
+app.get("/update", (req, res) => {
+    res.render("update");
+})
+
+app.get("/delete", (req, res) => {
+    res.render("delete");
+})
+
+app.get("/products", (req, res) => {
+    res.render("products");
+})
 
 //app.use("/api/users", rutasUsuario);
 
