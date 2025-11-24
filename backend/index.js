@@ -3,7 +3,7 @@ import environments from "./src/api/config/environments.js"; // Variables de ent
 
 import cors from "cors"; // Permite que el front haga peticiones al back
 import { loggerUrl } from "./src/api/middlewares/middlewares.js";
-import { productRoutes } from "./src/api/routes/index.js";
+import { productRoutes, viewRoutes } from "./src/api/routes/index.js";
 import { join, __dirname } from "./src/api/utils/index.js";
 
 const app = express(); // Crea una instancia de Express.
@@ -45,27 +45,7 @@ app.listen(PORT, () => {
 
 app.use("/api/products", productRoutes); // Rutas
 
-app.get("/dashboard", (req, res) => {
-    res.render("index");
-})
-app.get("/get", (req, res) => {
-    res.render("get");
-})
-app.get("/create", (req, res) => {
-    res.render("create");
-})
-
-app.get("/update", (req, res) => {
-    res.render("update");
-})
-
-app.get("/delete", (req, res) => {
-    res.render("delete");
-})
-
-app.get("/products", (req, res) => {
-    res.render("products");
-})
+app-use("/products", viewRoutes);
 
 //app.use("/api/users", rutasUsuario);
 
