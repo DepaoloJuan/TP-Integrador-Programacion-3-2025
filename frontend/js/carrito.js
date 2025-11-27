@@ -23,6 +23,7 @@ const btnVaciarCarrito2 =
 
 const botonVolver = document.getElementById("volver"); // solo en carrito.html
 const contadorHeader = document.getElementById("carrito-cantidad"); // botón header
+const botonConfirmar = document.getElementById('confirmar-compra');
 
 /* -------------------------
    Estado
@@ -42,7 +43,7 @@ function guardar() {
    - Renderiza items, total y contador
 ----------------------------------------------------------- */
 function mostrar() {
-  if (!cajaCarrito || !totalSpan) return;
+  //if (!cajaCarrito || !totalSpan) return;
 
   if (carrito.length === 0) {
     cajaCarrito.innerHTML = "<p>El carrito está vacío 🛒</p>";
@@ -84,7 +85,7 @@ function mostrar() {
 }
 
 /* ----------------------------------------------------------
-   sumar(id) / restar(id)
+   sumar(id) / restar(id) / vaciar()
 ----------------------------------------------------------- */
 function sumar(id) {
   const x = carrito.find((i) => String(i.id) === String(id));
@@ -108,9 +109,6 @@ function restar(id) {
   }
 }
 
-/* ----------------------------------------------------------
-   vaciar()
------------------------------------------------------------ */
 function vaciar() {
   carrito = [];
   guardar();
@@ -178,20 +176,34 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Vaciar
-if (botonVaciar) {
-  botonVaciar.addEventListener("click", vaciar);
+
+// VACIAR
+if (btnVaciarCarrito2) { 
+  btnVaciarCarrito2.addEventListener("click", vaciar);
 }
 
-// Volver (solo si existe en esa vista)
+// VOLVER
 if (botonVolver) {
-  botonVolver.addEventListener(
-    "click",
-    () => (window.location.href = "index.html")
-  );
+    botonVolver.addEventListener('click', () => {
+        // Redirige al hacer clic a 'index.html'
+        window.location.href = 'index.html';
+    });
+}
+
+// CONFIRMAR COMPRA
+if (botonConfirmar) {
+    botonConfirmar.addEventListener('click', () => {
+        // Redirige al hacer clic a 'ticket.html'
+        window.location.href = 'ticket.html';
+    });
 }
 
 /* ==========================================================
    INIT
 ========================================================== */
 mostrar();
+
+
+
+
+

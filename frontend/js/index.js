@@ -1,5 +1,4 @@
 let contenedorProductos = document.getElementById("lista-productos");
-//const botonConfirmar = document.getElementById("btn-confirmar");
 const carritoItems = document.getElementById("contenedor-carrito");
 const carritoTotal = document.getElementById("total-carrito");
 const botonVaciar = document.getElementById("vaciar-carrito");
@@ -65,6 +64,7 @@ function accionCarrito(forzarCierre = false) {
   }
 }
 
+
 /* ----------------------------------------------------------
    3) Escuchadores de eventos
 ----------------------------------------------------------- */
@@ -74,6 +74,7 @@ if (botonCarrito && panelCarrito) {
     evento.stopPropagation(); // evita que el click se propague
     accionCarrito(); // alternar
   });
+
 
   // CLICK fuera del panel → cerrar
   document.addEventListener("click", (evento) => {
@@ -85,6 +86,7 @@ if (botonCarrito && panelCarrito) {
     }
   });
 
+
   // TECLA ESC → cerrar
   document.addEventListener("keydown", (evento) => {
     if (evento.key === "Escape") {
@@ -93,10 +95,7 @@ if (botonCarrito && panelCarrito) {
   });
 }
 
-//botonConfirmar.addEventListener("click", () => {
-// window.location.href = "carrito.html";
-//});
-
+// funcion Principal
 function init() {
   obtenerProductos();
 }

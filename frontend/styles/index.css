@@ -44,12 +44,12 @@ header {
   justify-content: space-between;
   background: #000;
   color: var(--color-blanco);
-  padding: 10px 20px;
+  padding: 0px 20px;
   position: relative;
 }
 
 header img { width: 150px; height: 130px; object-fit: contain; }
-header h1 { font-size: 1.8rem; }
+header h1 { font-size: 1.6rem; }
 
 footer {
   position: fixed;
@@ -58,7 +58,7 @@ footer {
   right: 0;
   background: var(--color-principal);
   color: var(--color-blanco);
-  padding: 10px;
+  padding: 13px;
   display: flex;
   justify-content: center;
   gap: 33%;
@@ -185,7 +185,7 @@ li img{
 .boton,
 .boton--secundario {
   border: 0;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 6px 10px;
   cursor: pointer;
   background: var(--color-principal);
@@ -277,7 +277,7 @@ li img{
   padding: 8px 0;
 }
 .item-carrito:last-child { border-bottom: 0; }
-.img-mini { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; }
+.img-mini { width: 70px; height: 70px; border-radius: 6px; object-fit: cover; }
 .info-item { flex: 1; display: grid; grid-template-columns: 1fr auto; gap: 6px; }
 .info-item p { margin: 0; }
 .controles {
@@ -326,16 +326,30 @@ li img{
   font-weight: 600;
 }
 
-
-
-
-
-
-
-
 #getproduct-form{
   margin: 10px;
 }
 
 
+/* Contenedor de los botones */
+.contenedor-botones {
+    display: flex; 
+    width: 100%;
+    gap: 20%;
+    background-color: black;
+   
+}
 
+
+.contenedor-botones .boton {
+    
+    flex: 1;
+    padding: 10px 10px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white; 
+    background-color: white; 
+    color: black;
+    cursor: pointer;
+}

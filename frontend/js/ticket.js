@@ -19,13 +19,18 @@ function mostrarCarrito() {
     let html = "";
     let total = 0;
 
-    carrito.forEach(fruta => {
+    carrito.forEach(disco => {
         html += `
-            <div class="item-carrito">
-                <p>${fruta.nombre}  -  ${fruta.cant}  -  $${fruta.subtotal}</p>
-            </div>
+        <div class="item-carrito">
+            <img 
+                src="${disco.imagen}" 
+                alt="Imagen de ${disco.nombre}" 
+                class="img-mini" 
+            /> 
+            <p>${disco.nombre} - ${disco.cant} - $${disco.subtotal}</p>
+        </div>
         `;
-        total += fruta.subtotal;
+        total += disco.subtotal;
     });
 
 
