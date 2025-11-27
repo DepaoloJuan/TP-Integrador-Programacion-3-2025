@@ -335,16 +335,14 @@ li img{
 .contenedor-botones {
     display: flex; 
     width: 100%;
-    gap: 20%;
-    background-color: black;
-   
+    gap: 10%;
 }
 
 
 .contenedor-botones .boton {
     
     flex: 1;
-    padding: 10px 10px;
+    padding: 5px 10px;
     font-size: 1em;
     font-weight: bold;
     text-align: center;
