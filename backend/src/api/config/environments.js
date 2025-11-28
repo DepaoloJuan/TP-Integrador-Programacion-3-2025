@@ -13,6 +13,7 @@ export const env = {
     password: process.env.DB_PASSWORD,
     name: process.env.DB_NAME,
   },
+  SESSION_KEY: process.env.SESSION_KEY,
 };
 
 export default env;

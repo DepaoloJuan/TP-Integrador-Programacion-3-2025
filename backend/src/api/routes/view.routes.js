@@ -1,20 +1,12 @@
 import { Router } from "express";
-import productModels from "../models/product.models.js";
+import { vistaProductos } from "../controllers/view.controllers.js";
 
 const router = Router();
 
 // rutas de las vistas
 
-router.get("/index", async (req, res) => {
-  try {
-    const [rows] = await productModels.selectAllProducts();
-    res.render("index", {
-      productos: rows,
-    });
-  } catch (error) {
-    res.status(500).send("Error al obtener los productos");
-  }
-});
+router.get("/index", vistaProductos);
+
 router.get("/consultar", (req, res) => {
   res.render("get");
 });
@@ -30,4 +22,7 @@ router.get("/eliminar", (req, res) => {
   res.render("delete");
 });
 
+router.get("/loggin", (req, res) => {
+  res.render("loggin");
+});
 export default router;
