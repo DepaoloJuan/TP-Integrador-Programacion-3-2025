@@ -1,5 +1,10 @@
 <%- include("partials/head.ejs") %>
 <h1>Login </h1>
+<% if (typeof error !==  "undefined"){ %>
+    <p style="color:red;"><%= error %></p>
+<% } %>
+
+) %>
 <form id="login-form" action="/login" method="POST" autocomplete="off">
    
     <label for="emailUser">Email:</label>

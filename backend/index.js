@@ -95,13 +95,13 @@ app.post("/api/users", async (req, res) => {
 });
 
 // Endpoint para inicio de sesion, recibimos correo y password con una peticion POST
-app.post("/login", async (req, res) => {
+app.post("/loggin", async (req, res) => {
   try {
     const { correo, password } = req.body;
 
     // Evitamos consulta innecesaria
     if (!correo || !password) {
-      return res.render("login", {
+      return res.render("loggin", {
         error: "Todos los campos son obligatorios!",
       });
     }
@@ -111,7 +111,7 @@ app.post("/login", async (req, res) => {
 
     // Si no existen usuarios con ese correo o password
     if (rows.length === 0) {
-      return res.render("login", {
+      return res.render("loggin", {
         error: "Credenciales incorrectas!",
       });
     }
@@ -127,7 +127,7 @@ app.post("/login", async (req, res) => {
       correo: user.correo,
     };
 
-    res.redirect("/"); // Redirigimos a la pagina principal
+    res.redirect("/products"); // Redirigimos a la pagina principal
   } catch (error) {
     console.log(error);
     res.status(500).json({
@@ -147,7 +147,7 @@ app.post("/logout", (req, res) => {
       });
     }
 
-    res.redirect("login"); // Redirigimos a login
+    res.redirect("loggin"); // Redirigimos a login
   });
 });
 
