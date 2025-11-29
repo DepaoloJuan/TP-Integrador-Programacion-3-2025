@@ -127,7 +127,7 @@ app.post("/loggin", async (req, res) => {
       correo: user.correo,
     };
 
-    res.redirect("/products"); // Redirigimos a la pagina principal
+    res.redirect("/products/index"); // Redirigimos a la pagina principal
   } catch (error) {
     console.log(error);
     res.status(500).json({
