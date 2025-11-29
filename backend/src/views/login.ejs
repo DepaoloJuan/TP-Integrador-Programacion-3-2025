@@ -1,0 +1,33 @@
+<%- include("partials/head.ejs") %>
+
+<h1>Login</h1>
+
+<% if (typeof error !== "undefined") { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>
+
+<form id="login-form" action="/loggin" method="POST" autocomplete="off">
+
+   
+    <label for="emailUser">Email:</label>
+    <input type="email" id="emailUser" name="correo" required>
+    
+    <label for="passwordUser">Password:</label>
+    <input type="password" id="passwordUser" name="password" required>
+
+    <input type="submit" class="btn-login" value="Login">
+    <input type="button" id="acceso" class="btn-login" value="Acceso rapido">
+</form>
+
+<script>
+    let emailUser = document.getElementById("emailUser");
+    let passwordUser = document.getElementById("passwordUser");
+
+    let acceso_rapido = document.getElementById("acceso");
+    acceso_rapido.addEventListener("click", () => {
+        emailUser.value = "user@example.com";
+        passwordUser.value = "123";
+    });
+</script>
+
+<%- include("partials/footer.ejs") %>
