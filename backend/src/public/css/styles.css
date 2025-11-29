@@ -261,3 +261,11 @@ hr{
 .formulario input[type="submit"]:hover {
   background: #1f5bd1;
 }
+
+/* ==========================================================
+   PANTALLA UPDATE
+========================================================== */
+
+.li-listados{
+  color: white;
+}

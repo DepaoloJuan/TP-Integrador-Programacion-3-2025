@@ -27,7 +27,7 @@ function mostrarProducto(producto) {
   let htmlProducto = `
                 <li class="li-listados">
                     <img src="${producto.imagen}" alt="${producto.nombre}">
-                    <p>Id: ${producto.id} / Nombre: ${producto.nombre} / <strong>Precio: ${producto.precio}</strong></p>
+                    <p>Id: ${producto.id} / Nombre: ${producto.nombre}</p>
                 </li>
                 <li class="li-botonera">
                     <input type="button" id="updateProduct_button" value="Actualizar producto">
