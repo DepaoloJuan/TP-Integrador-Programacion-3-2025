@@ -147,7 +147,7 @@ app.post("/logout", (req, res) => {
       });
     }
 
-    res.redirect("loggin"); // Redirigimos a login
+    res.redirect("/products/loggin"); // Redirigimos a login
   });
 });
 
