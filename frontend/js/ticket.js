@@ -1,17 +1,17 @@
-const cantidadTexto = document.getElementById("cantidad");
-const totalTexto = document.getElementById("total");
+
+const totalTexto = document.getElementById("total-ticket");
 const fechaTexto = document.getElementById("fecha");
 const btnVolver = document.getElementById("volver");
 const productosCarrito = document.getElementById("productos");
+const elementoNombre = document.getElementById("nombre-usuario");
+const nombreGuardado = localStorage.getItem("nombreUsuario"); 
 
 // Leer el carrito desde localStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-
-
 function mostrarCarrito() {
     if (carrito.length === 0) {
-        listaCarrito.innerHTML = "<p>El carrito está vacío 🛒</p>";
+        productosCarrito.innerHTML = "<p>El carrito está vacío 🛒</p>";
         totalTexto.textContent = 0;
         return;
     }
@@ -33,12 +33,9 @@ function mostrarCarrito() {
         total += disco.subtotal;
     });
 
-
     productosCarrito.innerHTML = html;
-    totalTexto.textContent = total;
-    
+    totalTexto.textContent = total; 
 }
-
 
 // Fecha actual (formato dd/mm/yyyy - hh:mm)
 let fecha = new Date();
@@ -49,13 +46,6 @@ fechaTexto.textContent = fechaFormateada;
 btnVolver.addEventListener("click", () => {
     window.location.href = "carrito.html"; // cambia el nombre si tu archivo principal es otro
 });
-
-
-// 1. Obtener la referencia al elemento donde se mostrará el nombre
-const elementoNombre = document.getElementById("nombre-usuario");
-
-// 2. Obtener el nombre del usuario desde localStorage
-const nombreGuardado = localStorage.getItem("nombreUsuario"); 
 
 
 if (nombreGuardado) {  // Si el nombre existe en localStorage

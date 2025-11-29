@@ -238,6 +238,9 @@ li img{
    CARRITO DESPLEGABLE
 ========================================================== */
 
+.main-carrito{
+  padding-bottom: 70px; /* evita que tape el footer */
+}
 
 #btn-carrito {
   border: 0;
@@ -363,7 +366,9 @@ li img{
 
 
 
-/*===========CARRITO============*/
+/*==================================
+           CARRITO
+===================================*/
           
 #total{
   color: #000000;
@@ -382,4 +387,30 @@ li img{
   border-radius: 10px;
   padding: 10px;
   margin: 30px;
+}
+
+/*==================================
+           TICKET
+===================================*/
+
+.contenedor-ticket{
+  padding-bottom: 60px; /* evita que tape el footer */
+}
+.contenedor-ticket p{
+  padding: 10px;
+}
+
+#ticket{
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  background-color: whitesmoke;
+  color: black;
+}
+
+#volver{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
