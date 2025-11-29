@@ -1,47 +1,51 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/nav.ejs") %>
 
-<main>
-<h1>Crear producto</h1>
-        <hr>
+<main class="main-crear">
+    <h1>Crear producto</h1>
+    <hr>
 
-       <form id="altaproducs-form">
-            <label for="nameProd">Nombre del producto</label>
-            <input type="text" name="nombre" id="nameProd" required> 
-            
-            <label for="imageProd">Url imagen</label>
-            <input type="text" name="imagen" id="imageProd" required>
-
-            <label for="categoryProd">categoria</label>
-            <select name="tipo" id="categoryProd" required> 
-                <option value="rock">Rock Nacional</option>
-                <option value="pop">Pop</option>
-                <option value="metal">Metal</option>
-                <option value="punk">Punk</option>
-            </select>
-            
-            <label for="priceProd">Precio</label>
-            <input type="number" name="precio" id="priceProd" required>
-            
-            <br>
-            <input type="submit" value="Crear producto">
-        </form>
-        
-        <div id="contenedor_productos">
-            <ul id="lista-productos"></ul>
-        </div>
-
- <h2>Alta Usuarios</h2>
-    <form id="alta-usuarios-form">
-        
-        <label for="emailUser">Email:</label>
-        <input type="email" id="emailUser" name="correo" required>
     
-        <label for="passwordUser">Password:</label>
-        <input type="password" id="passwordUser" name="password" required>
-    
-        <input type="submit" value="Crear usuario">
+
+    <form id="altaproducs-form" class="formulario">
+        <label for="nameProd">Nombre del producto</label>
+        <input type="text" name="nombre" id="nameProd" required>
+
+        <label for="imageProd">Url imagen</label>
+        <input type="text" name="imagen" id="imageProd" required>
+
+        <label for="categoryProd">Categoría</label>
+        <select name="tipo" id="categoryProd" required>
+            <option value="rock">Rock Nacional</option>
+            <option value="trap">Trap</option>
+            <option value="reggueton">Reggueton</option>
+            <option value="pop">Pop Urbano</option>
+            <option value="cumbia">Cumbia</option>
+            <option value="instrumento">Instrumento</option>
+        </select>
+
+        <label for="priceProd">Precio</label>
+        <input type="number" name="precio" id="priceProd" required>
+
+        <input type="submit" value="Crear producto">
+
+
     </form>
+
+    <h1>Alta Usuarios</h1>
+
+    <form id="alta-usuarios-form" class="formulario">
+
+        <label for="emailUser">Email</label>
+        <input type="email" id="emailUser" name="correo" required>
+
+        <label for="passwordUser">Password</label>
+        <input type="password" id="passwordUser" name="password" required>
+
+        <input type="submit" value="Crear usuario">
+
+    </form>
+
 </main>
 
 <script src="/js/create.js"></script>

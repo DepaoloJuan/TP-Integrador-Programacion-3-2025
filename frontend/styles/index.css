@@ -170,11 +170,7 @@ li img{
 /* ==========================================================
    PANTALLA INDEX (productos + carrito)
 ========================================================== */
-#main-index {
-  width: min(1100px, 95%);
-  margin: 0 auto;
-  padding: 20px 0 90px;
-}
+
 .subtitulo{
   color: white;
 }
@@ -183,6 +179,11 @@ li img{
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
+}
+#main-index {
+  width: min(1100px, 95%);
+  margin: 0 auto;
+  padding: 20px 0 90px;
 }
 .boton,
 .boton--secundario {

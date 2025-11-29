@@ -1,5 +1,5 @@
 let getProduct_form = document.getElementById("getProduct-form");
-let listaProductos = document.getElementById("lista-productos");
+let listaProductos = document.getElementById("contenedor-productos");
 let url = "http://localhost:3000/api/products/";
 
 getProduct_form.addEventListener("submit", async (event) => {
@@ -15,28 +15,26 @@ getProduct_form.addEventListener("submit", async (event) => {
 
     let producto = datos.payload[0];
 
-    let htmlProducto = `<li>
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
-                </li>`;
-
-    console.log(htmlProducto);
-    listaProductos.innerHTML = htmlProducto;
+    mostrarProducto(producto);
+    
   } catch (error) {
+    mostrarError(error);
     console.error("Error al consultar el producto:", error);
   }
 });
 
+// Falta validacion  despues de let datos, if(respuesta.ok){} else{}
+
 function mostrarProducto(producto) {
-  let htmlProducto = `<li>
+  let htmlProducto = `
                 <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
-                </li>`;
+                <p>
+                  Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Tipo: ${producto.tipo}
+                </p>`;
   listaProductos.innerHTML = htmlProducto;
+  console.log(htmlProducto);
 }
 
-//hacer funcion mostrar productos, para despues agregar
-//validacion  despues de let datos, if(respuesta.ok){} else{}
 function mostrarError(mensaje) {
   let htmlError = `
             <li class="mensaje-error"> 

@@ -1,10 +1,10 @@
 <%- include("partials/head.ejs") %>
 <%- include("partials/nav.ejs") %>
 
- <main>
+    <main id="main-index">
         <h1>Lista de productos</h1>
         <hr>
-        <div id="contenedor-productos">
+        <div id="lista-productos">
             <!-- Vamos a iterar el array de productos que le pasamos desde el endpoint -->
              <% productos.forEach(prod => { %>
                 <div class="card-producto">

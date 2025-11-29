@@ -22,7 +22,7 @@ const validateId = (req, res, next) => {
 const requireLogin = (req, res, next) => {
   // Chequeamos si no existe la sesion de usuario, de ser asi, redirigimos a /login
   if (!req.session.user) {
-    return res.redirect("/products/loggin");
+    return res.redirect("/products/cre");
   }
   next(); // Sin el next, nunca llega a procesar la respuesta -> response
 };
