@@ -47,7 +47,7 @@ function formularioPutProducto(event, producto) {
   event.stopPropagation();
 
   let updateForm_html = `
-                <form id="updateProducts-form">
+                <form id="updateProducts-form" class="formulario">
 
                     <input type="hidden" name="id" id="idProdHidden" value="${
                       producto.id
@@ -64,24 +64,41 @@ function formularioPutProducto(event, producto) {
                     }" required>
 
                     <label for="typeProd">Tipo</label>
+
                     <select name="type" id="typeProd" required>
-                        <option value="Rock Nacional 70s" ${
-                          producto.tipo === "Rock Nacional 70s"
-                            ? "selected"
-                            : ""
-                        }>Rock Nacional 70s</option>
-                        <option value="Rock Nacional" ${
-                          producto.tipo === "Rock Nacional" ? "selected" : ""
-                        }>Rock Nacional</option>
-                        <option value="Pop" ${
-                          producto.tipo === "Pop" ? "selected" : ""
-                        }>Pop</option>
-                        <option value="Metal" ${
-                          producto.tipo === "Metal" ? "selected" : ""
-                        }>Metal</option>
-                        <option value="Punk" ${
-                          producto.tipo === "Punk" ? "selected" : ""
-                        }>Punk</option>
+
+                    <option value="Rock Nacional 70s" ${
+                      producto.tipo === "Rock Nacional 70s" ? "selected" : ""
+                    }>Rock Nacional 70s</option>
+
+                    <option value="Rock Nacional" ${
+                      producto.tipo === "Rock Nacional" ? "selected" : ""
+                    }>Rock Nacional</option>
+
+                    <option value="Pop" ${
+                      producto.tipo === "Pop" ? "selected" : ""
+                    }>Pop</option>
+
+                    <option value="Metal" ${
+                      producto.tipo === "Metal" ? "selected" : ""
+                    }>Metal</option>
+
+                    <option value="Punk" ${
+                      producto.tipo === "Punk" ? "selected" : ""
+                    }>Punk</option>
+
+                    <!-- NUEVOS -->
+                    <option value="Instrumento" ${
+                      producto.tipo === "Instrumento" ? "selected" : ""
+                    }>Instrumento</option>
+
+                    <option value="Trap" ${
+                      producto.tipo === "Trap" ? "selected" : ""
+                    }>Trap</option>
+
+                    <option value="Reggueton" ${
+                      producto.tipo === "Reggueton" ? "selected" : ""
+                    }>Reggueton</option>
 
                     </select>
 

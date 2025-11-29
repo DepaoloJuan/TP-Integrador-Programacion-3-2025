@@ -201,13 +201,22 @@ h1{
   margin: 20px;
 }
 
-#boton-logout{
+#boton-logout {
   border: none;
   padding: 10px;
   margin: 20px;
   border-radius: 10px;
-  
+  background: #2a72ff; /* Opcional si quieres que tenga color inicial */
+  color: white;        /* Opcional */
+  cursor: pointer;
 }
+
+/* Cambio a rojo al pasar el mouse */
+#boton-logout:hover {
+  background: red;
+  color: white; /* opcional para asegurar contraste */
+}
+
 
 hr{
   width: 500px;
@@ -258,14 +267,84 @@ hr{
   border-radius: 6px;
 }
 
+
 .formulario input[type="submit"]:hover {
   background: #1f5bd1;
+}
+
+input[type="submit"]:hover {
+  background: rgb(8, 205, 54);
 }
 
 /* ==========================================================
    PANTALLA UPDATE
 ========================================================== */
 
+.main-update{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+
 .li-listados{
   color: white;
+}
+
+.li-listados img{
+  width: 300px;
+  height: 300px;
+  margin: 0;
+}
+
+#updateProduct_button {
+  background: #2a72ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   PANTALLA DELETE
+========================================================== */
+
+.main-delete{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+#deleteBtn {
+  background: #2a72ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px;
+}
+
+#deleteBtn:hover {
+  background: red;
+  color: white; /* opcional para asegurar contraste */
+}
+
+#producto-eliminar{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #eee;
+}
+
+#producto-eliminar img{
+  width: 300px;
+  height: 300px;
 }

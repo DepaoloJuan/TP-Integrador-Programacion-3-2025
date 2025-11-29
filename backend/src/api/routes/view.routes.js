@@ -6,20 +6,21 @@ const router = Router();
 
 // rutas de las vistas
 
-router.get("/index", vistaProductos);
+router.get("/index", requireLogin, vistaProductos);
 
-router.get("/consultar", (req, res) => {
+router.get("/consultar", requireLogin, (req, res) => {
   res.render("get");
 });
-router.get("/crear", (req, res) => {
+
+router.get("/crear", requireLogin, (req, res) => {
   res.render("create");
 });
 
-router.get("/modificar", (req, res) => {
+router.get("/modificar", requireLogin, (req, res) => {
   res.render("update");
 });
 
-router.get("/eliminar", (req, res) => {
+router.get("/eliminar", requireLogin, (req, res) => {
   res.render("delete");
 });
 

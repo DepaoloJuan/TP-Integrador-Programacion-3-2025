@@ -1,7 +1,8 @@
-let getProduct_form = document.getElementById("getProduct-form");
-let listaProductos = document.getElementById("lista-productos");
+let getProduct_form = document.getElementById("getproduct-form");
+let listaProductos = document.getElementById("producto-eliminar");
 let url = "http://localhost:3000/api/products/";
 
+console.log("entro al js");
 getProduct_form.addEventListener("submit", async (event) => {
   event.preventDefault();
   let formData = new FormData(event.target);
@@ -16,9 +17,9 @@ getProduct_form.addEventListener("submit", async (event) => {
 
     let htmlProducto = `<li>
                 <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Descripción: ${producto.descripcion}</p>
-                </li>
-                <button id="deleteBtn">Eliminar producto</button>`;
+                <p>Id: ${producto.id} / Nombre: ${producto.nombre} / Precio: $${producto.precio} / Tipo: ${producto.tipo}</p>
+                <button id="deleteBtn">Eliminar producto</button>
+                </li>`;
 
     console.log(htmlProducto);
     listaProductos.innerHTML = htmlProducto;
