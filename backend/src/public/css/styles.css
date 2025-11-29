@@ -44,7 +44,6 @@ header {
   justify-content: space-between;
   background: #000;
   color: var(--color-blanco);
-  padding: 10px 20px;
   position: relative;
 }
 
