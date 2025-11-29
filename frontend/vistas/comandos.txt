@@ -20,7 +20,9 @@ PAYLOAD --- Esto hace que se carguen los datos importantes de un jason y hacen q
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
-cd "C:\Users\Usuario\Desktop\Integrador\TP-Integrador-Programacion-3-2025\backend"
+cd "C:\Users\Usuario\Desktop\discos\TP-Integrador-Programacion-3-2025\backend"
+
+cd "C:\Users\Usuario\Desktop\discos\backend"  
 
 Esto despues lo borro juan es para anotarme cosas que voy probando en el momento
 ...................................................
