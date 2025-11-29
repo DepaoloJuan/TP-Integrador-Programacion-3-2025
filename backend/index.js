@@ -3,7 +3,11 @@ import environments from "./src/api/config/environments.js"; // Variables de ent
 
 import cors from "cors"; // Permite que el front haga peticiones al back
 import { loggerUrl } from "./src/api/middlewares/middlewares.js";
-import { productRoutes, viewRoutes } from "./src/api/routes/index.js";
+import {
+  productRoutes,
+  viewRoutes,
+  ticketRoutes,
+} from "./src/api/routes/index.js";
 import { join, __dirname } from "./src/api/utils/index.js";
 
 import connection from "./src/api/database/db.js";
@@ -32,6 +36,8 @@ app.use(express.urlencoded({ extended: true })); //para que transforme y entiend
 
 // Middleware para servir archivos estaticos
 app.use(express.static(join(__dirname, "src/public"))); // Vamos a construir la ruta relativa para servir los archivos de la carpeta /public
+
+app.use("/api/tickets", ticketRoutes); // Rutas para tickets
 
 /*=====================
     Configuracion

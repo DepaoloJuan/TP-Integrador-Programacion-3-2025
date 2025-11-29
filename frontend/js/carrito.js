@@ -23,7 +23,7 @@ const btnVaciarCarrito2 =
 
 const botonVolver = document.getElementById("volver"); // solo en carrito.html
 const contadorHeader = document.getElementById("carrito-cantidad"); // botón header
-const botonConfirmar = document.getElementById('confirmar-compra');
+const botonConfirmar = document.getElementById("confirmar-compra");
 
 /* -------------------------
    Estado
@@ -176,34 +176,78 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 // VACIAR
-if (btnVaciarCarrito2) { 
+if (btnVaciarCarrito2) {
   btnVaciarCarrito2.addEventListener("click", vaciar);
 }
 
 // VOLVER
 if (botonVolver) {
-    botonVolver.addEventListener('click', () => {
-        // Redirige al hacer clic a 'index.html'
-        window.location.href = 'index.html';
-    });
+  botonVolver.addEventListener("click", () => {
+    // Redirige al hacer clic a 'index.html'
+    window.location.href = "index.html";
+  });
 }
 
 // CONFIRMAR COMPRA
+/* ----------------------------------------------------------
+   Cuando el usuario confirma la compra:
+   - Calculamos el precio total y el listado de IDs de productos
+   - Enviamos esos datos al backend (POST /api/tickets)
+   - Si todo sale bien, redirigimos a ticket.html como siempre
+----------------------------------------------------------- */
 if (botonConfirmar) {
-    botonConfirmar.addEventListener('click', () => {
-        // Redirige al hacer clic a 'ticket.html'
-        window.location.href = 'ticket.html';
-    });
+  botonConfirmar.addEventListener("click", async () => {
+    try {
+      // Nombre del usuario desde la pantalla bienvenida
+      const nombreUsuario = localStorage.getItem("nombreUsuario") || "Cliente";
+
+      let precioTotal = 0;
+      let productosIds = [];
+
+      // Recorremos el carrito para armar total y productos
+      carrito.forEach((item) => {
+        const precio = Number(item.precio) || 0;
+        const cant = Number(item.cant) || 0;
+
+        precioTotal += precio * cant;
+
+        // Repetimos el id tantas veces como cantidad
+        for (let i = 0; i < cant; i++) {
+          productosIds.push(item.id);
+        }
+      });
+
+      // Llamamos a la API de tickets en el backend
+      const respuesta = await fetch("http://localhost:3000/api/tickets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombreUsuario,
+          precioTotal,
+          productos: productosIds,
+        }),
+      });
+
+      if (!respuesta.ok) {
+        console.error("Error al guardar el ticket");
+      } else {
+        const data = await respuesta.json();
+        console.log("Ticket guardado:", data);
+      }
+
+      // Redirigimos al ticket (funcionalidad original)
+      window.location.href = "ticket.html";
+    } catch (error) {
+      console.error("Error en la confirmación de compra:", error);
+      window.location.href = "ticket.html";
+    }
+  });
 }
 
 /* ==========================================================
    INIT
 ========================================================== */
 mostrar();
-
-
-
-
-
