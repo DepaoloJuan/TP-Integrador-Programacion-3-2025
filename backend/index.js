@@ -9,9 +9,8 @@ import {
   ticketRoutes,
 } from "./src/api/routes/index.js";
 import { join, __dirname } from "./src/api/utils/index.js";
-
+import authRoutes from "./src/api/routes/autenticacion.routes.js";
 import connection from "./src/api/database/db.js";
-
 import session from "express-session";
 
 const app = express(); // Crea una instancia de Express.
@@ -66,7 +65,7 @@ app.use("/api/products", productRoutes); // Rutas
 
 app.use("/products", viewRoutes);
 
-//app.use("/api/users", rutasUsuario);
+app.use("/", authRoutes); // Autenticacion
 
 //endpoint crear usuarios
 
@@ -100,47 +99,6 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-// Endpoint para inicio de sesion, recibimos correo y password con una peticion POST
-app.post("/loggin", async (req, res) => {
-  try {
-    const { correo, password } = req.body;
-
-    // Evitamos consulta innecesaria
-    if (!correo || !password) {
-      return res.render("loggin", {
-        error: "Todos los campos son obligatorios!",
-      });
-    }
-
-    const sql = `SELECT * FROM usuarios where correo = ? AND password = ?`;
-    const [rows] = await connection.query(sql, [correo, password]);
-
-    // Si no existen usuarios con ese correo o password
-    if (rows.length === 0) {
-      return res.render("loggin", {
-        error: "Credenciales incorrectas!",
-      });
-    }
-
-    console.log(rows);
-    const user = rows[0];
-    console.table(user);
-
-    // Ahora toca guardar sesion y hacer el redirect
-    // Crearmos la sesion del usuario, que es un objeto que guarda su id y su correo
-    req.session.user = {
-      id: user.id,
-      correo: user.correo,
-    };
-
-    res.redirect("/products/index"); // Redirigimos a la pagina principal
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      error: "Error interno del servidor",
-    });
-  }
-});
 
 // Endpoint para cerrar sesion (destruir sesion y redireccionar)
 app.post("/logout", (req, res) => {
