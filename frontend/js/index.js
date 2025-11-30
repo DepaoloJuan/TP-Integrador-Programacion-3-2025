@@ -6,6 +6,7 @@ const botonCarrito = document.getElementById("btn-carrito");
 const panelCarrito = document.getElementById("panel-carrito");
 const botonOrdenarNombre = document.getElementById("boton-ordenar-nombre");
 const botonOrdenarPrecio = document.getElementById("boton-ordenar-precio");
+const barraBusqueda = document.getElementById("barra-busqueda");
 
 let productosCopia = []; 
 
@@ -139,4 +140,18 @@ botonOrdenarPrecio.addEventListener("click", () => {
   } catch (error) {
     console.error("Error al ordenar los productos por precio:", error);
   }
+});
+
+
+/* ----------------------------------------------------------
+   Ordenamos los prodectos segun la busqueda
+----------------------------------------------------------- */
+barraBusqueda.addEventListener("input", () => {
+  let texto = barraBusqueda.value.toLowerCase().trim(); // Eliminamos los espacios y en minusculas
+
+  let filtrados = productosCopia.filter(producto => // Filtramos los productos segun el texto
+    producto.nombre.toLowerCase().includes(texto) 
+  );
+
+  mostrarProductos(filtrados); // Mostramos los productos filtrados
 });
