@@ -270,12 +270,10 @@ hr{
 
 
 .formulario input[type="submit"]:hover {
-  background: #1f5bd1;
+  background: #2edb1e;
+  color: #000;
 }
 
-input[type="submit"]:hover {
-  background: rgb(8, 205, 54);
-}
 
 /* ==========================================================
    PANTALLA UPDATE

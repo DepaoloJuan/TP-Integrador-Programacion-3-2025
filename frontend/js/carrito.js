@@ -116,7 +116,17 @@ if (botonVolver) {
    - Si todo sale bien, redirigimos a ticket.html como siempre
 ----------------------------------------------------------- */
 if (botonConfirmar) {
-  botonConfirmar.addEventListener("click", async () => {
+  botonConfirmar.addEventListener("click", async (event) => {
+
+    event.stopPropagation();
+    let confirmacion = confirm(
+      "¿Confirmar la compra?"
+    );
+    if (!confirmacion) {
+      alert("Compra cancelada.");
+      return;
+    } 
+        
     try {
       // Nombre del usuario desde la pantalla bienvenida
       const nombreUsuario = localStorage.getItem("nombreUsuario") || "Cliente";

@@ -44,7 +44,7 @@ fechaTexto.textContent = fechaFormateada;
 
 // Botón para volver a la tienda
 btnVolver.addEventListener("click", () => {
-    window.location.href = "carrito.html"; // cambia el nombre si tu archivo principal es otro
+    window.location.href = "bienvenida.html"; // cambia el nombre si tu archivo principal es otro
 });
 
 
