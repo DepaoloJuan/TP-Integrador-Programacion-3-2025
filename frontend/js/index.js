@@ -4,6 +4,9 @@ const carritoTotal = document.getElementById("total-carrito");
 const botonVaciar = document.getElementById("vaciar-carrito");
 const botonCarrito = document.getElementById("btn-carrito");
 const panelCarrito = document.getElementById("panel-carrito");
+const botonOrdenarNombre = document.getElementById("boton-ordenar-nombre");
+
+let productosCopia = []; 
 
 async function obtenerProductos() {
   let url = "http://localhost:3000/api/products";
@@ -14,6 +17,7 @@ async function obtenerProductos() {
     contenedorProductos.innerHTML = "";
     console.log(productos.payload);
 
+    productosCopia = productos.payload;
     mostrarProductos(productos.payload);
   } catch (error) {
     console.error("Error al obtener productos:", error); // Mostramos el error por consola.
@@ -101,3 +105,18 @@ function init() {
 }
 
 init(); // Inicia el js por init
+
+
+
+botonOrdenarNombre.addEventListener("click", () => {
+  try{
+
+    let ordenados = [...productosCopia];
+    
+    ordenados.sort((a, b) => a.nombre.localeCompare(b.nombre)); // Ordenamos de la A - Z
+    mostrarProductos(ordenados); // Los mostramos
+
+  }catch (error) {
+    console.error("Error al ordenar los productos:", error); // Mostramos el error por consola.
+  }
+});
