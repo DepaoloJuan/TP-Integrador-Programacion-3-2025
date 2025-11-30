@@ -5,6 +5,7 @@ const botonVaciar = document.getElementById("vaciar-carrito");
 const botonCarrito = document.getElementById("btn-carrito");
 const panelCarrito = document.getElementById("panel-carrito");
 const botonOrdenarNombre = document.getElementById("boton-ordenar-nombre");
+const botonOrdenarPrecio = document.getElementById("boton-ordenar-precio");
 
 let productosCopia = []; 
 
@@ -107,7 +108,9 @@ function init() {
 init(); // Inicia el js por init
 
 
-
+/* ----------------------------------------------------------
+   Ordenamos los prodectos por orden alfabetico
+----------------------------------------------------------- */
 botonOrdenarNombre.addEventListener("click", () => {
   try{
 
@@ -118,5 +121,22 @@ botonOrdenarNombre.addEventListener("click", () => {
 
   }catch (error) {
     console.error("Error al ordenar los productos:", error); // Mostramos el error por consola.
+  }
+});
+
+
+/* ----------------------------------------------------------
+   Ordenamos los prodectos por el precio
+----------------------------------------------------------- */
+botonOrdenarPrecio.addEventListener("click", () => {
+  try {
+    
+    let ordenados = [...productosCopia];
+    ordenados.sort((a, b) => a.precio - b.precio); // Ordenamos por precio de menor a mayor
+
+    mostrarProductos(ordenados);
+
+  } catch (error) {
+    console.error("Error al ordenar los productos por precio:", error);
   }
 });
