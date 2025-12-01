@@ -1,5 +1,7 @@
+
 // importamos mysql2 para manejar la conexion a la base de datos
 import mysql from "mysql2/promise";
+
 // importamos las variables de entorno
 import environments from "../config/environments.js";
 

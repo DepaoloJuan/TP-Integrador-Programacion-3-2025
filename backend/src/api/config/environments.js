@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 //configuramos dotenv para que lea el archivo .env
 dotenv.config();
 
-//exportamos un objeto con las variables de entorno necesarias de .env
+ //exportamos un objeto con las variables de entorno necesarias de .env
 export const env = {
   PORT: process.env.PORT || 3100,
   database: {

@@ -20,9 +20,16 @@ PAYLOAD --- Esto hace que se carguen los datos importantes de un json y hacen qu
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
-cd "C:\Users\Usuario\Desktop\discos\TP-Integrador-Programacion-3-2025\backend"
+CONTROLLERS --- Se colocan las funciones que contienen la lógica real de la aplicación.
+                Los controladores dicen qué hacer cuando ese endpoint es llamado.
+                Esta la lógica principal de cada endpoint.
+--------------------------------------------------------------------------------------------------------------------------------------
+
+FLUJO --- GET /products → product.routes.js → validateId → product.controllers.js → product.models.js → DB → JSON
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
 
 cd "C:\Users\Usuario\Desktop\discos\backend"  
 
-Esto despues lo borro juan es para anotarme cosas que voy probando en el momento
 ...................................................

@@ -36,7 +36,6 @@ app.use(express.urlencoded({ extended: true })); //para que transforme y entiend
 // Middleware para servir archivos estaticos
 app.use(express.static(join(__dirname, "src/public"))); // Vamos a construir la ruta relativa para servir los archivos de la carpeta /public
 
-app.use("/api/tickets", ticketRoutes); // Rutas para tickets
 
 /*=====================
     Configuracion
@@ -64,6 +63,8 @@ app.listen(PORT, () => {
 app.use("/api/products", productRoutes); // Rutas
 
 app.use("/products", viewRoutes);
+
+app.use("/api/tickets", ticketRoutes); // Rutas para tickets
 
 app.use("/", authRoutes); // Autenticacion
 
