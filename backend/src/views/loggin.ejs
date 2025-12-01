@@ -1,10 +1,12 @@
 <%- include("partials/head.ejs") %>
-<h1>Login </h1>
 <% if (typeof error !==  "undefined"){ %>
     <p style="color:red;"><%= error %></p>
 <% } %>
 
-<form id="login-form" action="/loggin" method="POST" autocomplete="off" class="formulario">
+<main class="main-loggin">
+
+    <h1>Login </h1>
+    <form id="login-form" action="/loggin" method="POST" autocomplete="off" class="formulario">
    
     <label for="emailUser">Email:</label>
     <input type="email" id="emailUser" name="correo" required>
@@ -17,7 +19,7 @@
 
 </form>
 
+</main>
 
 <script defer src="/js/loggin.js"></script>
 
-<%- include("partials/footer.ejs") %>

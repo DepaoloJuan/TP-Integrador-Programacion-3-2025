@@ -207,15 +207,15 @@ h1{
   padding: 10px;
   margin: 20px;
   border-radius: 10px;
-  background: #2a72ff; /* Opcional si quieres que tenga color inicial */
-  color: white;        /* Opcional */
+  background: #2a72ff; 
+  color: white;        
   cursor: pointer;
 }
 
 /* Cambio a rojo al pasar el mouse */
 #boton-logout:hover {
   background: red;
-  color: white; /* opcional para asegurar contraste */
+  color: white; /
 }
 
 
@@ -346,4 +346,19 @@ hr{
 #producto-eliminar img{
   width: 300px;
   height: 300px;
+}
+
+.main-loggin{
+  background-color: #000;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;        
+  top: 50%;                  
+  left: 50%;                 
+  transform: translate(-50%, -50%); 
 }
