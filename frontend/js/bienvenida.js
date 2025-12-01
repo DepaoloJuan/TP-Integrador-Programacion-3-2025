@@ -1,4 +1,5 @@
-// Elementos del DOM  obtener datos del formulario
+
+/* ========= Elementos del DOM ========= */
 const formNombre = document.getElementById("form-nombre");
 const inputNombre = document.getElementById("input-nombre");
 
@@ -9,9 +10,9 @@ formNombre.addEventListener("submit", function (event) {
   if (nombreUsuario === "") {
     alert("Por favor, ingresa un nombre válido.");
   }
-  localStorage.setItem("nombreUsuario", nombreUsuario); // guardamos el nombre en localstorage
+  localStorage.setItem("nombreUsuario", nombreUsuario); // Guardamos el nombre en localstorage
 
-  window.location.href = "../vistas/index.html"; //nos lleva a la pagina principal
+  window.location.href = "../vistas/index.html"; // Nos lleva a la pagina principal
 });
 
 

@@ -16,7 +16,7 @@ AWAIT --- se usa solo dentro de funciones async y su función es esperar a que u
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-PAYLOAD --- Esto hace que se carguen los datos importantes de un jason y hacen que se muestren diferentes como un pretty de mongo
+PAYLOAD --- Esto hace que se carguen los datos importantes de un json y hacen que se muestren diferentes como un pretty de mongo
 
 --------------------------------------------------------------------------------------------------------------------------------------
 

@@ -103,8 +103,7 @@ if (botonVaciar) {
 // VOLVER
 if (botonVolver) {
   botonVolver.addEventListener("click", () => {
-    // Redirige al hacer clic a 'index.html'
-    window.location.href = "index.html";
+    window.location.href = "index.html";// Redirige al hacer clic a 'index.html'
   });
 }
 
@@ -118,8 +117,8 @@ if (botonVolver) {
 if (botonConfirmar) {
   botonConfirmar.addEventListener("click", async (event) => {
 
-    event.stopPropagation();
-    let confirmacion = confirm(
+    event.stopPropagation(); //Evita que el evento Click se valla a otro boton 
+    let confirmacion = confirm( // confirm devuelve true si es un ok
       "¿Confirmar la compra?"
     );
     if (!confirmacion) {
@@ -129,14 +128,14 @@ if (botonConfirmar) {
         
     try {
       // Nombre del usuario desde la pantalla bienvenida
-      const nombreUsuario = localStorage.getItem("nombreUsuario") || "Cliente";
+      const nombreUsuario = localStorage.getItem("nombreUsuario") || "Cliente"; //si no existe usuario devuelve "Cliente" como defecto
 
       let precioTotal = 0;
       let productosIds = [];
 
       // Recorremos el carrito para armar total y productos
       carrito.forEach((item) => {
-        const precio = Number(item.precio) || 0;
+        const precio = Number(item.precio) || 0; // Parseamos a numero con Numbre()
         const cant = Number(item.cant) || 0;
 
         precioTotal += precio * cant;
@@ -147,13 +146,13 @@ if (botonConfirmar) {
         }
       });
 
-      // Llamamos a la API de tickets en el backend
+      // Hacemos una peticion POST al endpoint
       const respuesta = await fetch("http://localhost:3000/api/tickets", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
+        body: JSON.stringify({ // Convertimos a JSON el objeto
           nombreUsuario,
           precioTotal,
           productos: productosIds,
@@ -163,12 +162,11 @@ if (botonConfirmar) {
       if (!respuesta.ok) {
         console.error("Error al guardar el ticket");
       } else {
-        const data = await respuesta.json();
+        const data = await respuesta.json(); // Leemos la respuesta y la parseamos a JSON
         console.log("Ticket guardado:", data);
       }
 
-      // Redirigimos al ticket (funcionalidad original)
-      window.location.href = "ticket.html";
+      window.location.href = "ticket.html"; // Redirigimos al ticket 
     } catch (error) {
       console.error("Error en la confirmación de compra:", error);
       window.location.href = "ticket.html";

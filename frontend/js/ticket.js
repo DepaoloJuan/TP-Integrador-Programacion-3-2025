@@ -1,4 +1,5 @@
 
+/* ========= Elementos del DOM ========= */
 const totalTexto = document.getElementById("total-ticket");
 const fechaTexto = document.getElementById("fecha");
 const btnVolver = document.getElementById("volver");
@@ -9,8 +10,10 @@ const nombreGuardado = localStorage.getItem("nombreUsuario");
 // Leer el carrito desde localStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+
+/* ========= MOSTRAR =========*/
 function mostrarCarrito() {
-    if (carrito.length === 0) {
+    if (carrito.length === 0) { 
         productosCarrito.innerHTML = "<p>El carrito está vacío 🛒</p>";
         totalTexto.textContent = 0;
         return;
@@ -42,17 +45,15 @@ let fecha = new Date();
 let fechaFormateada = fecha.toLocaleString('es-AR');
 fechaTexto.textContent = fechaFormateada;
 
-// Botón para volver a la tienda
+// Boton para volver a la tienda
 btnVolver.addEventListener("click", () => {
-    window.location.href = "bienvenida.html"; // cambia el nombre si tu archivo principal es otro
+    window.location.href = "bienvenida.html"; 
 });
 
 
 if (nombreGuardado) {  // Si el nombre existe en localStorage
-   
     elementoNombre.textContent = nombreGuardado;  // lo insertamos como texto dentro del elemento HTML
 } else {
-
     elementoNombre.textContent = "Estimado/a cliente"; // Si no encuentra el nombre pone por defecto
 }
 

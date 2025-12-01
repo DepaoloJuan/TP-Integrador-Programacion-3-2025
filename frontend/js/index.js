@@ -1,3 +1,5 @@
+
+/* ========= Elementos del DOM ========= */
 let contenedorProductos = document.getElementById("lista-productos");
 const carritoItems = document.getElementById("contenedor-carrito");
 const carritoTotal = document.getElementById("total-carrito");
@@ -8,7 +10,7 @@ const botonOrdenarNombre = document.getElementById("boton-ordenar-nombre");
 const botonOrdenarPrecio = document.getElementById("boton-ordenar-precio");
 const barraBusqueda = document.getElementById("barra-busqueda");
 
-let productosCopia = []; 
+let productosCopia = []; //Declaramos una variable global 
 
 async function obtenerProductos() {
   let url = "http://localhost:3000/api/products";
@@ -17,7 +19,7 @@ async function obtenerProductos() {
     let respuesta = await fetch(url); // Fetch hace una peticion a la url.
     let productos = await respuesta.json(); // Convertimos los datos de la url a .json.
     contenedorProductos.innerHTML = "";
-    console.log(productos.payload);
+    console.log(productos.payload); // Payload solo toma los datos importantes de JSON, parecido a pretty de mongo
 
     productosCopia = productos.payload;
     mostrarProductos(productos.payload);
@@ -101,11 +103,12 @@ if (botonCarrito && panelCarrito) {
   });
 }
 
-// funcion Principal
+/* ===========FUNCION PRINCIPAL============ */
 function init() {
   obtenerProductos();
 }
 
+/* ===========INIT============ */
 init(); // Inicia el js por init
 
 
