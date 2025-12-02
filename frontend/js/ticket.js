@@ -47,6 +47,7 @@ fechaTexto.textContent = fechaFormateada;
 
 // Boton para volver a la tienda
 btnVolver.addEventListener("click", () => {
+    localStorage.removeItem("carrito")
     window.location.href = "bienvenida.html"; 
 });
 
