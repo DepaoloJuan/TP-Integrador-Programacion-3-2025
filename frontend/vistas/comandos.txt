@@ -25,6 +25,73 @@ CONTROLLERS --- Se colocan las funciones que contienen la lógica real de la apl
                 Esta la lógica principal de cada endpoint.
 --------------------------------------------------------------------------------------------------------------------------------------
 
+MODELS ---  Contiene todas las funciones que permiten interactuar con la base de datos.
+            Aqie se hacen todas las consultas SQL de la Pagina
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+API --- Una api permite que dos programas se comuniquen entre si
+
+API REST --- La API REST es el puente, usando endpoints como puertas de acceso (GET / POST / PUT / DELETE)
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+ENDPOINT --- Es una dirección (URL) donde puedes pedir o enviar información.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+RENDERIZAR ---  Renderizar significa convertir algo en una salida visible.
+
+                En una web, es el proceso de:
+                ➡️ Transformar código (plantillas, datos, lógica) en una página que el usuario puede ver
+                ➡️ Mostrar textos, tablas, imágenes, botones, formularios, etc.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+EJS ---  Son plantillas HTML
+         Con pedacitos de código JS dentro
+         Que se procesan en el servidor para producir HTML final
+         Tambien sirve para reutilizar componentes 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 FLUJO --- GET /products → product.routes.js → validateId → product.controllers.js → product.models.js → DB → JSON
 
 --------------------------------------------------------------------------------------------------------------------------------------
