@@ -55,11 +55,13 @@ EJS ---  Son plantillas HTML
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
+ROUTES ---  La carpeta routes sirve para organizar las rutas de tu servidor, es decir, 
+            los caminos/endpoints que tu backend escucha y responde.
 
+            index.js arranca el servidor
+            routes/archivo.js maneja qué pasa cuando alguien visita una ruta
 
-
-
-
+--------------------------------------------------------------------------------------------------------------------------------------
 
 
 
