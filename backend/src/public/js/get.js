@@ -23,7 +23,6 @@ getProduct_form.addEventListener("submit", async (event) => {
   }
 });
 
-// Falta validacion  despues de let datos, if(respuesta.ok){} else{}
 
 function mostrarProducto(producto) {
   let htmlProducto = `

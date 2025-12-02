@@ -4,6 +4,10 @@ let url = "http://localhost:3000";
 
 altaProductsForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  let confirmar = confirm("¿Deseas crear este producto?");
+  if (!confirmar) return; 
+
   let formData = new FormData(event.target);
   let data = Object.fromEntries(formData.entries());
 
@@ -18,6 +22,7 @@ altaProductsForm.addEventListener("submit", async (event) => {
     if (response.ok) {
       let resultado = await response.json();
       console.log("Producto creado:", resultado);
+      event.target.reset();
     }
   } catch (error) {
     console.error("Error al crear el producto:", error);

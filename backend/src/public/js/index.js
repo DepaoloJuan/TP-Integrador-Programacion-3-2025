@@ -27,7 +27,7 @@ let contenedorProductos = document.getElementById("lista-productos");
                         <img src="${prod.imagen}" alt="${prod.nombre}">
                         <h3>${prod.nombre}</h3>
                         <h2>Id: ${prod.id}</h2>
-                        <p>$${prod.precio}</p>
+                        <p>$${prod.precio}</p> 
                     </div>
                 `;
 
